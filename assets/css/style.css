@@ -450,48 +450,72 @@ section h2::after {
     /* NAVBAR */
     #navbar {
         padding: 1rem 1.5rem;
-        flex-wrap: nowrap;
-    }
-
-    .nav-logo {
-        font-size: 1rem;
-        white-space: nowrap;
     }
 
     .nav-links {
-        gap: 1rem;
+        display: none;
+        position: fixed;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: rgba(10, 10, 15, 0.97);
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        padding: 1rem 0;
+        border-bottom: 1px solid rgba(0, 170, 255, 0.15);
+        z-index: 99;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }     
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
     }
 
     .nav-links a {
-        font-size: 0.8rem;
+        display: block;
+        padding: 1rem;
+        font-size: 1rem;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
     }
 
-    /* SEZIONI */
-    section {
-        padding: 80px 5%;
-    }
-
-    /* PREVIEW DROPDOWN LINK */
-    .preview-dropdown {
+    .hamburger {
+        display: flex;
         flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        background: none;
+        border: none;
+        padding: 6px;
+        z-index: 110;
     }
 
-    /* CONTATTI */
-    .contact-card {
-        flex-wrap: wrap;
+    .hamburger span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background: var(--accent);
+        border-radius: 2px;
+        transition: transform 0.3s ease, opacity 0.3s ease;
     }
 
-    .contact-info {
-        min-width: 0;
+    .hamburger.open span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
     }
 
-    .contact-value {
-        font-size: 0.8rem;
-        word-break: break-all;
+    .hamburger.open span:nth-child(2) {
+        opacity: 0;
     }
 
-    /* ANTEPRIMA IMMAGINI */
-    .anteprima-grid {
-        grid-template-columns: 1fr;
+    .hamburger.open span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
     }
+}
+
+.hamburger {
+    display: none;
 }

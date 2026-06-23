@@ -44,3 +44,22 @@ function switchImage(img) {
     imgs[nextIndex].classList.add('active');
     dots[nextIndex].classList.add('active');
 }
+
+/* HAMBURGER MENU */
+(function() {
+    const btn = document.getElementById('hamburger');
+    const nav = document.getElementById('nav-links');
+
+    btn.addEventListener('click', () => {
+        btn.classList.toggle('open');
+        nav.classList.toggle('open');
+    });
+
+    // chiudi il menu cliccando un link
+    nav.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => {
+            btn.classList.remove('open');
+            nav.classList.remove('open');
+        });
+    });
+})();
