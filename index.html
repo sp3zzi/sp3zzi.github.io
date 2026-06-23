@@ -69,14 +69,6 @@
         <h2 class="reveal">Progetti</h2>
         <!-- AZIENDA FINDER -->
         <div class="project-card reveal reveal-d1">
-            <div class="card-gallery">
-                <img src="assets/images/azienda-finder-1.png" alt="Azienda Finder - home" class="gallery-img active" onclick="switchImage(this)">
-                <img src="assets/images/azienda-finder-2.png" alt="Azienda Finder - archivio" class="gallery-img" onclick="switchImage(this)">
-                <div class="gallery-dots">
-                    <span class="dot active"></span>
-                    <span class="dot"></span>
-                </div>
-            </div>
             <div class="project-info">
                 <h3>Azienda Finder</h3>
                 <p>Tool web sviluppato in Python con Flask per automatizzare la ricerca di potenziali clienti sul territorio. Cerca aziende per comune, raccoglie i contatti tramite Google Places API e OpenStreetMap, e genera un report PDF pronto all'uso. Include un sistema di gestione contatti e un controllo automatico delle chiamate API per evitare costi imprevisti.</p>
@@ -88,6 +80,19 @@
                 </div>
                 <div class="project-links">
                     <span class="project-private">🔒 Progetto privato</span>
+                    <button class="btn-preview-toggle" onclick="togglePreview(this)">→ Vedi anteprima</button>
+                    <div class="preview-dropdown">
+                        <div class="anteprima-grid">
+                            <div class="anteprima-item">
+                                <img src="assets/images/azienda-finder-1.png" alt="Azienda Finder - home">
+                                <span>Home — Ricerca aziende</span>
+                            </div>
+                            <div class="anteprima-item">
+                                <img src="assets/images/azienda-finder-2.png" alt="Azienda Finder - archivio">
+                                <span>Archivio comuni</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
