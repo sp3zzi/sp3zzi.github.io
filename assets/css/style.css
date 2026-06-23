@@ -468,8 +468,12 @@ section h2::after {
     }
 
     .nav-links.open {
-        display: flex;
-    }     
+        display: flex !important;
+    }
+
+    .nav-links {
+    display: none !important;
+    }
 
     .nav-links li {
         width: 100%;
@@ -514,6 +518,19 @@ section h2::after {
     .hamburger.open span:nth-child(3) {
         transform: translateY(-7px) rotate(-45deg);
     }
+
+    /* TAG TECNOLOGIE */
+    .project-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .project-tags .skill-tag {
+        font-size: 0.78rem;
+        padding: 0.4rem 0.8rem;
+    }
+
 }
 
 .hamburger {
