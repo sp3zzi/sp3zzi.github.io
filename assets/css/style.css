@@ -46,6 +46,7 @@ body {
     font-weight: 700;
     color: var(--accent);
     letter-spacing: 1px;
+    white-space: nowrap;
 }
 
 .nav-links {
@@ -63,6 +64,39 @@ body {
 
 .nav-links a:hover {
     color: var(--accent);
+}
+
+/* Hamburger nascosto su desktop */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 6px;
+    z-index: 110;
+}
+
+.hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--accent);
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.hamburger.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
 }
 
 /* ===== SEZIONI GENERALI ===== */
@@ -231,6 +265,13 @@ section h2::after {
     color: var(--text-muted);
     display: inline-block;
     margin-top: 0.5rem;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
 }
 
 /* ===== BANNER CARD ===== */
@@ -420,6 +461,7 @@ section h2::after {
     flex-direction: column;
     gap: 0.2rem;
     flex: 1;
+    min-width: 0;
 }
 
 .contact-label {
@@ -432,6 +474,7 @@ section h2::after {
 .contact-value {
     font-size: 0.95rem;
     color: var(--text);
+    word-break: break-all;
 }
 
 .contact-arrow {
@@ -452,27 +495,29 @@ section h2::after {
         padding: 1rem 1.5rem;
     }
 
+    .hamburger {
+        display: flex;
+    }
+
     .nav-links {
         display: none;
         position: fixed;
-        top: 60px;
+        top: 62px;
         left: 0;
         width: 100%;
         background: rgba(10, 10, 15, 0.97);
+        backdrop-filter: blur(10px);
         flex-direction: column;
         align-items: center;
         gap: 0;
         padding: 1rem 0;
         border-bottom: 1px solid rgba(0, 170, 255, 0.15);
         z-index: 99;
+        list-style: none;
     }
 
     .nav-links.open {
-        display: flex !important;
-    }
-
-    .nav-links {
-    display: none !important;
+        display: flex;
     }
 
     .nav-links li {
@@ -485,54 +530,27 @@ section h2::after {
         padding: 1rem;
         font-size: 1rem;
         border-bottom: 1px solid rgba(255,255,255,0.05);
+        color: var(--text);
     }
 
-    .hamburger {
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-        cursor: pointer;
-        background: none;
-        border: none;
-        padding: 6px;
-        z-index: 110;
-    }
-
-    .hamburger span {
-        display: block;
-        width: 24px;
-        height: 2px;
-        background: var(--accent);
-        border-radius: 2px;
-        transition: transform 0.3s ease, opacity 0.3s ease;
-    }
-
-    .hamburger.open span:nth-child(1) {
-        transform: translateY(7px) rotate(45deg);
-    }
-
-    .hamburger.open span:nth-child(2) {
-        opacity: 0;
-    }
-
-    .hamburger.open span:nth-child(3) {
-        transform: translateY(-7px) rotate(-45deg);
+    /* SEZIONI */
+    section {
+        padding: 80px 5%;
     }
 
     /* TAG TECNOLOGIE */
-    .project-tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-    }
-
     .project-tags .skill-tag {
         font-size: 0.78rem;
         padding: 0.4rem 0.8rem;
     }
 
-}
+    /* ANTEPRIMA IMMAGINI */
+    .anteprima-grid {
+        grid-template-columns: 1fr;
+    }
 
-.hamburger {
-    display: none;
+    /* CONTATTI */
+    .contact-value {
+        font-size: 0.82rem;
+    }
 }
