@@ -1,156 +1,295 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio di Andrea Speziari, studente di Ingegneria Informatica. Progetti web, tool e molto altro.">
-    <title>Andrea Speziari | Portfolio</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Portfolio e curriculum di Andrea Speziari, studente al terzo anno di Ingegneria Informatica all'Università degli Studi di Brescia. Progetti web, tool digitali e sperimentazione pratica."
+  />
+  <title>Andrea Speziari | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@500;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Salta al contenuto</a>
 
-    <!-- NAVBAR -->
-    <nav id="navbar">
-        <div class="nav-logo">Andrea Speziari</div>
-        <ul class="nav-links" id="nav-links">
-            <li><a href="#about">Chi sono</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Progetti</a></li>
-            <li><a href="#contact">Contatti</a></li>
-        </ul>
-        <button class="hamburger" id="hamburger" aria-label="Menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-    </nav>
+  <nav id="navbar" aria-label="Navigazione principale">
+    <a href="#hero" class="nav-logo">Andrea Speziari</a>
 
-    <!-- HERO -->
+    <button
+      class="hamburger"
+      id="hamburger"
+      type="button"
+      aria-label="Apri il menu"
+      aria-expanded="false"
+      aria-controls="nav-links"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#about">Chi sono</a></li>
+      <li><a href="#skills">Competenze</a></li>
+      <li><a href="#projects">Progetti</a></li>
+      <li><a href="#contact">Contatti</a></li>
+    </ul>
+  </nav>
+
+  <main id="main-content">
     <section id="hero">
-        <h1>Ciao, sono <span>Andrea Speziari</span></h1>
-        <p>Studente di Ingegneria Informatica | Appassionato di sviluppo web e AI</p>
-        <a href="#projects" class="btn">Guarda i miei progetti</a>
+      <div class="hero-copy reveal">
+        <p class="hero-kicker">Portfolio / Curriculum</p>
+        <h1>
+          Ciao, sono <span>Andrea Speziari</span>
+        </h1>
+        <p class="hero-lead">
+          Sono uno studente al terzo anno di Ingegneria Informatica presso l’Università degli Studi di Brescia.
+          Nel tempo libero sviluppo progetti web, tool digitali e piccole soluzioni pratiche, con l’obiettivo di fare esperienza, migliorare ogni giorno e costruire competenze sempre più solide.
+        </p>
+        <p class="hero-support">
+          Ho già realizzato alcuni progetti concreti, ma resto aperto a ambiti diversi: sviluppo web, automazione, AI applicata, software e strumenti utili.
+          In questa fase voglio soprattutto mettermi alla prova, imparare più skill possibili e capire sul campo dove posso dare il meglio.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn">Vedi i progetti</a>
+          <a href="#contact" class="btn btn-secondary">Contattami</a>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal reveal-d1" aria-hidden="true">
+        <div class="orbital-scene">
+          <div class="core-glow"></div>
+          <div class="ring ring-1"></div>
+          <div class="ring ring-2"></div>
+          <div class="ring ring-3"></div>
+          <div class="orb orb-1"></div>
+          <div class="orb orb-2"></div>
+          <div class="orb orb-3"></div>
+          <div class="orb orb-4"></div>
+        </div>
+      </div>
     </section>
 
-    <!-- CHI SONO -->
     <section id="about">
-        <h2 class="reveal">Chi sono</h2>
-        <p class="reveal reveal-d1">Sono Andrea, studente al terzo anno di Ingegneria Informatica. Mi appassiona costruire cose concrete: dai siti web per piccole attività locali, agli strumenti che automatizzano processi reali. Sto esplorando il mondo dell'intelligenza artificiale e mi interessa capire come applicarla in progetti pratici.</p>
+      <div class="section-heading reveal">
+        <p class="section-label">Profilo</p>
+        <h2>Chi sono</h2>
+      </div>
+
+      <div class="about-grid">
+        <article class="about-card reveal reveal-d1">
+          <h3>Formazione</h3>
+          <p>
+            Studio Ingegneria Informatica all’Università degli Studi di Brescia e attualmente frequento il terzo anno.
+            Il mio percorso mi sta aiutando a costruire basi tecniche solide e un approccio orientato al problem solving.
+          </p>
+        </article>
+
+        <article class="about-card reveal reveal-d2">
+          <h3>Approccio</h3>
+          <p>
+            Mi piace trasformare idee concrete in progetti funzionanti.
+            Negli ultimi lavori ho sperimentato siti web, interfacce, tool di automazione e piccoli sistemi utili, cercando sempre un equilibrio tra semplicità, chiarezza e utilità reale.
+          </p>
+        </article>
+
+        <article class="about-card reveal reveal-d3">
+          <h3>Obiettivo</h3>
+          <p>
+            Sto ancora costruendo esperienza, quindi preferisco restare aperto a più possibilità.
+            Voglio imparare, testare tecnologie diverse e capire con il tempo in quali ambiti specializzarmi davvero.
+          </p>
+        </article>
+      </div>
     </section>
 
-    <!-- SKILLS -->
     <section id="skills">
-        <h2 class="reveal">Skills</h2>
-        <div class="skills-grid">
-            <div class="skills-category reveal reveal-d1">
-                <h3>Linguaggi principali</h3>
-                <div class="skills-tags">
-                    <span class="skill-tag">Java</span>
-                    <span class="skill-tag">HTML</span>
-                    <span class="skill-tag">CSS</span>
-                </div>
-            </div>
-            <div class="skills-category reveal reveal-d2">
-                <h3>In apprendimento</h3>
-                <div class="skills-tags">
-                    <span class="skill-tag learning">JavaScript</span>
-                    <span class="skill-tag learning">Python</span>
-                    <span class="skill-tag learning">SQL</span>
-                </div>
-            </div>
-            <div class="skills-category reveal reveal-d3">
-                <h3>Strumenti</h3>
-                <div class="skills-tags">
-                    <span class="skill-tag">Github</span>
-                    <span class="skill-tag">VS Code</span>
-                    <span class="skill-tag">Git</span>
-                </div>
-            </div>
+      <div class="section-heading reveal">
+        <p class="section-label">Competenze</p>
+        <h2>Stack e strumenti</h2>
+      </div>
+
+      <div class="skills-layout">
+        <div class="skills-block reveal reveal-d1">
+          <h3>Tecnologie con cui ho già lavorato</h3>
+          <div class="skills-tags">
+            <span class="skill-tag">HTML</span>
+            <span class="skill-tag">CSS</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Flask</span>
+            <span class="skill-tag">Java</span>
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">GitHub</span>
+            <span class="skill-tag">VS Code</span>
+          </div>
         </div>
+
+        <div class="skills-block reveal reveal-d2">
+          <h3>Interessi che sto approfondendo</h3>
+          <div class="skills-tags">
+            <span class="skill-tag learning">AI applicata</span>
+            <span class="skill-tag learning">Automazione</span>
+            <span class="skill-tag learning">SQL</span>
+            <span class="skill-tag learning">API integration</span>
+            <span class="skill-tag learning">UI/UX</span>
+            <span class="skill-tag learning">Tool digitali</span>
+          </div>
+        </div>
+
+        <div class="skills-note reveal reveal-d3">
+          <p>
+            Non mi interessa presentarmi come già “specializzato” in un solo ambito.
+            In questa fase il mio obiettivo è imparare il più possibile, lavorare su progetti reali e costruire esperienza pratica su tecnologie diverse.
+          </p>
+        </div>
+      </div>
     </section>
 
-    <!-- PROGETTI -->
     <section id="projects">
-        <h2 class="reveal">Progetti</h2>
-        <!-- AZIENDA FINDER -->
-        <div class="project-card reveal reveal-d1">
-            <div class="project-info">
-                <h3>Azienda Finder</h3>
-                <p>Tool web sviluppato in Python con Flask per automatizzare la ricerca di potenziali clienti sul territorio. Cerca aziende per comune, raccoglie i contatti tramite Google Places API e OpenStreetMap, e genera un report PDF pronto all'uso. Include un sistema di gestione contatti e un controllo automatico delle chiamate API per evitare costi imprevisti.</p>
-                <div class="project-tags">
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">Flask</span>
-                    <span class="skill-tag">Google Places API</span>
-                    <span class="skill-tag">OpenStreetMap</span>
-                </div>
-                <div class="project-links">
-                    <span class="project-private">🔒 Progetto privato</span>
-                    <button class="btn-preview-toggle" onclick="togglePreview(this)">→ Vedi anteprima</button>
-                    <div class="preview-dropdown">
-                        <div class="anteprima-grid">
-                            <div class="anteprima-item">
-                                <img src="assets/images/azienda-finder-1.png" alt="Azienda Finder - home">
-                                <span>Home — Ricerca aziende</span>
-                            </div>
-                            <div class="anteprima-item">
-                                <img src="assets/images/azienda-finder-2.png" alt="Azienda Finder - archivio">
-                                <span>Archivio comuni</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+      <div class="section-heading reveal">
+        <p class="section-label">Progetti</p>
+        <h2>Lavori selezionati</h2>
+      </div>
+
+      <div class="projects-grid">
+        <article class="project-card reveal reveal-d1">
+          <div class="project-header">
+            <div>
+              <p class="project-type">Tool web</p>
+              <h3>Azienda Finder</h3>
             </div>
-        </div>
-        <!-- SITI WEB -->
-        <div class="project-card reveal reveal-d2">
-            <div class="project-card-banner">
-                <div class="banner-gradient"></div>
-                <span class="banner-label">&lt;/&gt; Web Design</span>
+            <span class="project-status">Privato</span>
+          </div>
+
+          <p class="project-text">
+            Tool web sviluppato per automatizzare la ricerca di potenziali clienti sul territorio.
+            Il progetto raccoglie dati aziendali per comune, integra fonti come Google Places API e OpenStreetMap e genera un report finale pronto all’uso.
+          </p>
+
+          <p class="project-text">
+            Oltre alla parte di ricerca, ho lavorato anche sulla gestione dei contatti e su un controllo delle chiamate API per limitare costi e utilizzi imprevisti.
+          </p>
+
+          <div class="project-tags">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Flask</span>
+            <span class="skill-tag">Google Places API</span>
+            <span class="skill-tag">OpenStreetMap</span>
+            <span class="skill-tag">PDF export</span>
+          </div>
+
+          <button class="btn-preview-toggle" type="button" aria-expanded="false">
+            Mostra anteprima
+          </button>
+
+          <div class="preview-dropdown">
+            <div class="preview-grid">
+              <figure class="preview-item">
+                <img src="assets/images/azienda-finder-1.png" alt="Schermata home di Azienda Finder" loading="lazy" />
+                <figcaption>Home e ricerca aziende</figcaption>
+              </figure>
+              <figure class="preview-item">
+                <img src="assets/images/azienda-finder-2.png" alt="Schermata archivio di Azienda Finder" loading="lazy" />
+                <figcaption>Archivio comuni e dati raccolti</figcaption>
+              </figure>
             </div>
-            <div class="project-info">
-                <h3>Siti web per attività locali</h3>
-                <p>Template web professionali per piccole attività locali. Ogni template include sezione servizi, recensioni, orari e contatti via WhatsApp. Sviluppati per essere facilmente adattabili a qualsiasi settore.</p>
-                <div class="project-tags">
-                    <span class="skill-tag">HTML</span>
-                    <span class="skill-tag">CSS</span>
-                </div>
-                <button class="btn-preview-toggle" onclick="togglePreview(this)">
-                     → Vedi le preview
-                </button>
-                <div class="preview-dropdown">
-                    <a href="https://previw-estetisti.netlify.app/" target="_blank">✦ Centro Estetico</a>
-                    <a href="#" class="coming-soon">✦ Parrucchieri <span>coming soon</span></a>
-                    <a href="#" class="coming-soon">✦ Tatuatori <span>coming soon</span></a>
-                    <a href="#" class="coming-soon">✦ Ristoranti <span>coming soon</span></a>
-                </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal reveal-d2">
+          <div class="project-banner">
+            <div class="project-banner-grid"></div>
+            <span>Web templates</span>
+          </div>
+
+          <div class="project-header">
+            <div>
+              <p class="project-type">Siti web</p>
+              <h3>Siti per attività locali</h3>
             </div>
-        </div>
+            <span class="project-status live">Live</span>
+          </div>
+
+          <p class="project-text">
+            Raccolta di template web pensati per piccole attività locali, con struttura chiara, contatti immediati e presentazione semplice dei servizi.
+            L’obiettivo è creare basi riutilizzabili e adattabili a settori diversi.
+          </p>
+
+          <p class="project-text">
+            In questi progetti ho lavorato soprattutto su layout, gerarchia dei contenuti, usabilità mobile e chiarezza visiva.
+          </p>
+
+          <div class="project-tags">
+            <span class="skill-tag">HTML</span>
+            <span class="skill-tag">CSS</span>
+            <span class="skill-tag">Responsive design</span>
+            <span class="skill-tag">UI structure</span>
+          </div>
+
+          <button class="btn-preview-toggle" type="button" aria-expanded="false">
+            Mostra link e preview
+          </button>
+
+          <div class="preview-dropdown">
+            <div class="preview-links">
+              <a href="https://previw-estetisti.netlify.app/" target="_blank" rel="noopener noreferrer">Centro Estetico</a>
+              <span class="coming-soon">Parrucchieri — in arrivo</span>
+              <span class="coming-soon">Tatuatori — in arrivo</span>
+              <span class="coming-soon">Ristoranti — in arrivo</span>
+            </div>
+          </div>
+        </article>
+      </div>
     </section>
 
-    <!-- CONTATTI -->
     <section id="contact">
-        <h2 class="reveal">Contatti</h2>
-        <p class="reveal reveal-d1">Hai un progetto in mente o vuoi semplicemente fare due chiacchiere? Scrivimi.</p>
-        <div class="contact-grid reveal reveal-d2">
-            <a href="mailto:spezioandre@gmail.com" class="contact-card">
-                <div class="contact-icon">✉</div>
-                <div class="contact-info">
-                    <span class="contact-label">Email</span>
-                    <span class="contact-value">spezioandre@gmail.com</span>
-                </div>
-                <span class="contact-arrow">→</span>
-            </a>
-            <a href="https://github.com/sp3zzi" target="_blank" class="contact-card">
-                <div class="contact-icon">⌥</div>
-                <div class="contact-info">
-                        <span class="contact-label">GitHub</span>
-                        <span class="contact-value">github.com/sp3zzi</span>
-                </div>
-                <span class="contact-arrow">→</span>
-            </a>
-        </div>
-    </section>
+      <div class="section-heading reveal">
+        <p class="section-label">Contatti</p>
+        <h2>Parliamone</h2>
+      </div>
 
-    <script src="assets/js/main.js"></script>
+      <div class="contact-wrapper reveal reveal-d1">
+        <p class="contact-intro">
+          Sono interessato a opportunità in cui poter continuare a imparare, collaborare e fare esperienza pratica.
+          Se vuoi contattarmi per un progetto, un confronto o una possibilità di lavoro, puoi scrivermi qui.
+        </p>
+
+        <div class="contact-grid">
+          <a href="mailto:spezioandre@gmail.com" class="contact-card">
+            <span class="contact-icon">✉</span>
+            <span class="contact-meta">
+              <span class="contact-label">Email</span>
+              <span class="contact-value">spezioandre@gmail.com</span>
+            </span>
+            <span class="contact-arrow">→</span>
+          </a>
+
+          <a href="https://github.com/sp3zzi" target="_blank" rel="noopener noreferrer" class="contact-card">
+            <span class="contact-icon">⌘</span>
+            <span class="contact-meta">
+              <span class="contact-label">GitHub</span>
+              <span class="contact-value">github.com/sp3zzi</span>
+            </span>
+            <span class="contact-arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Andrea Speziari — Portfolio / Curriculum</p>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
 </body>
 </html>

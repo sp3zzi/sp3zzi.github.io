@@ -1,65 +1,88 @@
-/* SCROLL REVEAL */
-(function() {
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(e => {
-            if (e.isIntersecting) {
-                e.target.classList.add('visible');
-                observer.unobserve(e.target);
-            }
-        });
-    }, { threshold: 0.12 });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+(function () {
+  const revealItems = document.querySelectorAll('.reveal');
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.14 });
+
+    revealItems.forEach((item) => observer.observe(item));
+  } else {
+    revealItems.forEach((item) => item.classList.add('visible'));
+  }
 })();
 
-/* NAVBAR SHADOW ALLO SCROLL */
-window.addEventListener('scroll', () => {
-    const navbar = document.getElementById('navbar');
-    if (window.scrollY > 50) {
-        navbar.style.boxShadow = '0 4px 20px rgba(0, 170, 255, 0.1)';
-    } else {
-        navbar.style.boxShadow = 'none';
+(function () {
+  const navbar = document.getElementById('navbar');
+
+  function updateNavbarShadow() {
+    if (!navbar) return;
+    navbar.style.boxShadow =
+      window.scrollY > 30 ? '0 20px 40px rgba(0, 0, 0, 0.25)' : 'none';
+  }
+
+  window.addEventListener('scroll', updateNavbarShadow, { passive: true });
+  updateNavbarShadow();
+})();
+
+(function () {
+  const btn = document.getElementById('hamburger');
+  const nav = document.getElementById('nav-links');
+
+  if (!btn || !nav) return;
+
+  function openMenu() {
+    btn.classList.add('open');
+    nav.classList.add('open');
+    btn.setAttribute('aria-expanded', 'true');
+    btn.setAttribute('aria-label', 'Chiudi il menu');
+  }
+
+  function closeMenu() {
+    btn.classList.remove('open');
+    nav.classList.remove('open');
+    btn.setAttribute('aria-expanded', 'false');
+    btn.setAttribute('aria-label', 'Apri il menu');
+  }
+
+  btn.addEventListener('click', () => {
+    const isOpen = nav.classList.contains('open');
+    isOpen ? closeMenu() : openMenu();
+  });
+
+  nav.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', closeMenu);
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      closeMenu();
     }
-}, { passive: true });
+  });
 
-/* TOGGLE PREVIEW DROPDOWN */
-function togglePreview(btn) {
-    const dropdown = btn.nextElementSibling;
-    const isOpen = dropdown.classList.contains('open');
-    dropdown.classList.toggle('open');
-    btn.textContent = isOpen ? '→ Vedi le preview' : '↑ Chiudi le preview';
-}
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+      closeMenu();
+    }
+  });
+})();
 
-/* GALLERIA IMMAGINI CARD */
-function switchImage(img) {
-    const gallery = img.closest('.card-gallery');
-    const imgs = [...gallery.querySelectorAll('.gallery-img')];
-    const dots = [...gallery.querySelectorAll('.dot')];
-    
-    const currentIndex = imgs.findIndex(i => i.classList.contains('active'));
-    const nextIndex = (currentIndex + 1) % imgs.length;
-    
-    imgs.forEach(i => i.classList.remove('active'));
-    dots.forEach(d => d.classList.remove('active'));
-    
-    imgs[nextIndex].classList.add('active');
-    dots[nextIndex].classList.add('active');
-}
+(function () {
+  const previewButtons = document.querySelectorAll('.btn-preview-toggle');
 
-/* HAMBURGER MENU */
-(function() {
-    const btn = document.getElementById('hamburger');
-    const nav = document.getElementById('nav-links');
+  previewButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const dropdown = button.nextElementSibling;
+      const isOpen = dropdown.classList.contains('open');
 
-    btn.addEventListener('click', () => {
-        btn.classList.toggle('open');
-        nav.classList.toggle('open');
+      dropdown.classList.toggle('open');
+      button.setAttribute('aria-expanded', String(!isOpen));
+      button.textContent = isOpen ? 'Mostra anteprima' : 'Nascondi anteprima';
     });
-
-    // chiudi il menu cliccando un link
-    nav.querySelectorAll('a').forEach(a => {
-        a.addEventListener('click', () => {
-            btn.classList.remove('open');
-            nav.classList.remove('open');
-        });
-    });
+  });
 })();
