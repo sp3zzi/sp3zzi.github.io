@@ -38,7 +38,7 @@ body {
   background:
     radial-gradient(circle at top left, rgba(100, 216, 255, 0.08), transparent 32%),
     radial-gradient(circle at 85% 15%, rgba(28, 189, 244, 0.05), transparent 20%),
-    var(--bg);
+    linear-gradient(180deg, #0a0c12 0%, #0b0f17 100%);
   color: var(--text);
   line-height: 1.7;
 }
@@ -263,86 +263,112 @@ p {
   align-items: center;
   justify-content: center;
   perspective: 1400px;
+  min-height: 440px;
 }
 
 .orbital-scene {
   position: relative;
-  width: min(34vw, 390px);
+  width: min(35vw, 400px);
   aspect-ratio: 1;
   border-radius: 50%;
   transform-style: preserve-3d;
-  animation: floatScene 9s ease-in-out infinite;
+  animation: floatScene 10s ease-in-out infinite;
 }
 
-.core-glow {
+.hero-aura {
   position: absolute;
-  inset: 30%;
+  inset: 12%;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(100, 216, 255, 0.95) 0%, rgba(100, 216, 255, 0.28) 40%, transparent 74%);
-  filter: blur(12px);
+  background:
+    radial-gradient(circle, rgba(100, 216, 255, 0.18) 0%, rgba(100, 216, 255, 0.08) 30%, rgba(100, 216, 255, 0) 68%);
+  filter: blur(20px);
+  transform: translateZ(10px);
+}
+
+.core {
+  position: absolute;
+  border-radius: 50%;
+}
+
+.core-1 {
+  inset: 34%;
+  background:
+    radial-gradient(circle, rgba(255,255,255,0.96) 0%, rgba(100, 216, 255, 0.55) 36%, rgba(100, 216, 255, 0.05) 72%, transparent 100%);
+  filter: blur(2px);
   transform: translateZ(40px);
+  box-shadow: 0 0 45px rgba(100, 216, 255, 0.18);
+}
+
+.core-2 {
+  inset: 42%;
+  background:
+    radial-gradient(circle, rgba(255,255,255,0.98) 0%, rgba(100, 216, 255, 0.85) 40%, rgba(100, 216, 255, 0.15) 78%, transparent 100%);
+  transform: translateZ(60px);
+  box-shadow: 0 0 24px rgba(100, 216, 255, 0.28);
 }
 
 .ring {
   position: absolute;
   border-radius: 50%;
   border: 1px solid rgba(100, 216, 255, 0.18);
+  box-shadow: inset 0 0 18px rgba(100, 216, 255, 0.04);
 }
 
 .ring-1 {
-  inset: 10%;
-  transform: rotateX(74deg) rotateY(8deg);
+  inset: 8%;
+  transform: rotateX(73deg) rotateY(12deg);
 }
 
 .ring-2 {
   inset: 18%;
-  transform: rotateY(76deg) rotateZ(20deg);
+  transform: rotateY(72deg) rotateZ(18deg);
   border-color: rgba(255, 255, 255, 0.12);
 }
 
 .ring-3 {
-  inset: 26%;
-  transform: rotateX(18deg) rotateZ(32deg);
-  border-color: rgba(100, 216, 255, 0.1);
+  inset: 28%;
+  transform: rotateX(24deg) rotateZ(34deg);
+  border-color: rgba(100, 216, 255, 0.12);
 }
 
 .orb {
   position: absolute;
   border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.96), rgba(100,216,255,0.52) 45%, rgba(100,216,255,0.04) 78%, transparent 100%);
+  background:
+    radial-gradient(circle at 30% 30%, rgba(255,255,255,0.96), rgba(100,216,255,0.56) 42%, rgba(100,216,255,0.04) 80%, transparent 100%);
   box-shadow: 0 0 30px rgba(100, 216, 255, 0.12);
 }
 
 .orb-1 {
-  width: 72px;
-  height: 72px;
-  top: 8%;
+  width: 70px;
+  height: 70px;
+  top: 9%;
   left: 14%;
-  animation: orbitOne 10s linear infinite;
+  animation: orbitOne 11s linear infinite;
 }
 
 .orb-2 {
-  width: 42px;
-  height: 42px;
-  top: 56%;
+  width: 36px;
+  height: 36px;
+  top: 54%;
   right: 10%;
-  animation: orbitTwo 12s linear infinite;
+  animation: orbitTwo 13s linear infinite;
 }
 
 .orb-3 {
-  width: 24px;
-  height: 24px;
-  left: 48%;
-  bottom: 4%;
-  animation: orbitThree 7s linear infinite;
+  width: 22px;
+  height: 22px;
+  left: 50%;
+  bottom: 6%;
+  animation: orbitThree 8s linear infinite;
 }
 
 .orb-4 {
-  width: 18px;
-  height: 18px;
-  right: 28%;
-  top: 16%;
-  animation: orbitFour 8s linear infinite;
+  width: 16px;
+  height: 16px;
+  right: 24%;
+  top: 18%;
+  animation: orbitFour 9s linear infinite;
 }
 
 .section-heading {
@@ -666,8 +692,8 @@ p {
 .reveal-d3 { transition-delay: 0.24s; }
 
 @keyframes floatScene {
-  0%, 100% { transform: rotateX(12deg) rotateY(-10deg) translateY(0); }
-  50% { transform: rotateX(3deg) rotateY(9deg) translateY(-10px); }
+  0%, 100% { transform: rotateX(10deg) rotateY(-10deg) translateY(0); }
+  50% { transform: rotateX(3deg) rotateY(10deg) translateY(-12px); }
 }
 
 @keyframes orbitOne {
@@ -681,13 +707,13 @@ p {
 }
 
 @keyframes orbitThree {
-  from { transform: rotate(0deg) translateX(-14px) rotate(0deg); }
-  to { transform: rotate(360deg) translateX(-14px) rotate(-360deg); }
+  from { transform: rotate(0deg) translateX(-12px) rotate(0deg); }
+  to { transform: rotate(360deg) translateX(-12px) rotate(-360deg); }
 }
 
 @keyframes orbitFour {
-  from { transform: rotate(0deg) translateY(12px) rotate(0deg); }
-  to { transform: rotate(360deg) translateY(12px) rotate(-360deg); }
+  from { transform: rotate(0deg) translateY(10px) rotate(0deg); }
+  to { transform: rotate(360deg) translateY(10px) rotate(-360deg); }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -716,6 +742,7 @@ p {
 
   .hero-visual {
     order: -1;
+    min-height: 340px;
   }
 
   .orbital-scene {
