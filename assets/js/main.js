@@ -94,28 +94,30 @@
 
   if (!scene || !laptop) return;
 
-  /* Rotazione base del laptop senza mouse */
-  const baseX = 18;
-  const baseY = -18;
+  /* Rotazione base — deve corrispondere ai valori nel CSS */
+  const baseX = 4;
+  const baseY = -8;
+
+  /* Transizione più morbida durante il movimento */
+  laptop.style.transition = 'transform 0.08s ease';
 
   scene.addEventListener('mousemove', (e) => {
     const rect = scene.getBoundingClientRect();
 
-    /* Calcolo posizione relativa del mouse nel contenitore
-       da -1 a +1 su entrambi gli assi */
+    /* Posizione relativa del cursore nel contenitore: da -1 a +1 */
     const x = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
     const y = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
 
-    /* Applico rotazione aggiuntiva in base al cursore
-       max ±10 gradi extra rispetto alla base */
-    const rotX = baseX - y * 10;
-    const rotY = baseY + x * 10;
+    /* Rotazione aggiuntiva massima ±6 gradi — movimento sottile */
+    const rotX = baseX - y * 6;
+    const rotY = baseY + x * 6;
 
     laptop.style.transform = `rotateX(${rotX}deg) rotateY(${rotY}deg)`;
   });
 
-  /* Quando il cursore esce torno alla rotazione base */
+  /* Ritorno alla posizione base con transizione più lenta */
   scene.addEventListener('mouseleave', () => {
+    laptop.style.transition = 'transform 0.6s ease';
     laptop.style.transform = `rotateX(${baseX}deg) rotateY(${baseY}deg)`;
   });
 })();

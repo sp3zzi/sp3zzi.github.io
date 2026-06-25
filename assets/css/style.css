@@ -701,7 +701,6 @@ p {
   transform: rotateX(4deg) rotateY(-2deg);
   transform-style: preserve-3d;
   filter: drop-shadow(0 40px 60px rgba(0,0,0,0.5));
-  transition: transform 0.1s ease;
 }
 
 /* Schermo: sfondo scuro con bordo azzurro */
