@@ -897,6 +897,7 @@ p {
 }
 
 
+
 /* Ogni tasto: rettangolo semitrasparente */
 .kb-row span {
   flex: 1;
@@ -930,7 +931,7 @@ p {
 }
 
 
-/* ===== TABLET (max 980px) =====
+/* 
    Su schermi medi la hero passa a colonna singola
    con il laptop sopra il testo.
    Le card "Chi sono" diventano verticali */
@@ -972,9 +973,7 @@ p {
 }
 
 
-/* ===== MOBILE (max 768px) =====
-   Navbar con hamburger, sezioni più strette,
-   layout adattato per schermi piccoli */
+/* ===== MOBILE ===== */
 @media (max-width: 768px) {
   section {
     width: min(100% - 1.2rem, var(--container));
