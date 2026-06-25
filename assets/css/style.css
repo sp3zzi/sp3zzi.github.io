@@ -1,3 +1,13 @@
+/* ===================================================
+   PORTFOLIO — Andrea Speziari
+   File: style.css
+   Descrizione: stili principali del portfolio
+=================================================== */
+
+/* ===== VARIABILI GLOBALI =====
+   Qui definisco tutti i colori e le misure
+   che uso in tutto il sito. Se voglio cambiare
+   un colore lo cambio solo qui e si aggiorna ovunque */
 :root {
   --bg: #0a0c12;
   --bg-soft: #111520;
@@ -16,10 +26,13 @@
   --radius-sm: 12px;
   --radius-md: 18px;
   --radius-lg: 28px;
-  --nav-height: 78px;
-  --container: 1180px;
+  --nav-height: 78px;       /* altezza navbar fissa */
+  --container: 1180px;      /* larghezza massima del contenuto */
 }
 
+/* ===== RESET BASE =====
+   Azzero i margini e padding di default del browser
+   e uso border-box per calcolare le dimensioni in modo prevedibile */
 *,
 *::before,
 *::after {
@@ -28,10 +41,14 @@
   padding: 0;
 }
 
+/* Scroll animato quando clicco i link della navbar */
 html {
   scroll-behavior: smooth;
 }
 
+/* ===== BODY =====
+   Sfondo scuro con gradienti radiali sottili in alto
+   per dare profondità senza essere pesanti */
 body {
   min-height: 100vh;
   font-family: 'Inter', sans-serif;
@@ -43,12 +60,14 @@ body {
   line-height: 1.7;
 }
 
+/* Le immagini non escono mai dal loro contenitore */
 img {
   display: block;
   max-width: 100%;
   height: auto;
 }
 
+/* I form ereditano il font del body invece di usarne uno di default */
 button,
 input,
 textarea,
@@ -56,6 +75,7 @@ select {
   font: inherit;
 }
 
+/* Transizioni fluide su link e bottoni */
 a,
 button {
   transition:
@@ -66,12 +86,18 @@ button {
     box-shadow 0.25s ease;
 }
 
+/* ===== SEZIONI =====
+   Ogni sezione ha larghezza massima centrata
+   e padding verticale uniforme */
 section {
   width: min(100% - 2rem, var(--container));
   margin: 0 auto;
   padding: 5.5rem 0;
 }
 
+/* ===== TIPOGRAFIA =====
+   Uso Manrope per i titoli (più geometrico e deciso)
+   e Inter per il testo normale (più leggibile) */
 h1,
 h2,
 h3 {
@@ -80,10 +106,14 @@ h3 {
   letter-spacing: -0.03em;
 }
 
+/* Limito la larghezza dei paragrafi per facilitare la lettura */
 p {
   max-width: 72ch;
 }
 
+/* ===== ACCESSIBILITÀ =====
+   Link nascosto che appare solo con la tastiera (Tab)
+   per saltare direttamente al contenuto principale */
 .skip-link {
   position: absolute;
   left: 1rem;
@@ -100,6 +130,10 @@ p {
   top: 1rem;
 }
 
+/* ===== NAVBAR =====
+   Fissa in alto, con sfondo semitrasparente e blur.
+   Larghezza limitata come il resto del contenuto,
+   con angoli arrotondati in basso */
 #navbar {
   position: fixed;
   inset: 0 0 auto 0;
@@ -120,6 +154,7 @@ p {
   z-index: 1000;
 }
 
+/* Logo navbar — al click torna in cima */
 .nav-logo {
   color: var(--text);
   text-decoration: none;
@@ -132,6 +167,7 @@ p {
   color: var(--accent);
 }
 
+/* Link della navbar in orizzontale su desktop */
 .nav-links {
   list-style: none;
   display: flex;
@@ -150,6 +186,9 @@ p {
   color: var(--text);
 }
 
+/* ===== HAMBURGER MENU =====
+   Nascosto su desktop, visibile solo su mobile.
+   Le tre lineette si trasformano in X quando il menu è aperto */
 .hamburger {
   display: none;
   width: 44px;
@@ -172,6 +211,7 @@ p {
   transition: transform 0.28s ease, opacity 0.28s ease;
 }
 
+/* Animazione delle lineette → croce quando il menu è aperto */
 .hamburger.open span:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
 }
@@ -184,6 +224,9 @@ p {
   transform: translateY(-7px) rotate(-45deg);
 }
 
+/* ===== SEZIONE HERO =====
+   Layout a due colonne: testo a sinistra, laptop a destra.
+   Occupa almeno tutta l'altezza dello schermo */
 #hero {
   min-height: 100vh;
   padding-top: calc(var(--nav-height) + 4rem);
@@ -193,6 +236,7 @@ p {
   align-items: center;
 }
 
+/* Etichette piccole sopra i titoli (es. "Portfolio / Curriculum") */
 .hero-kicker,
 .section-label,
 .project-type {
@@ -203,6 +247,7 @@ p {
   margin-bottom: 0.9rem;
 }
 
+/* Titolo principale hero — dimensione fluida tra mobile e desktop */
 #hero h1 {
   font-size: clamp(3rem, 6vw, 5.4rem);
   margin-bottom: 1.2rem;
@@ -212,24 +257,29 @@ p {
   color: var(--accent);
 }
 
+/* Testo introduttivo principale */
 .hero-lead {
   font-size: clamp(1.03rem, 1.4vw, 1.18rem);
   color: var(--text-muted);
   margin-bottom: 1rem;
 }
 
+/* Testo secondario più tenue */
 .hero-support {
   color: var(--text-faint);
   font-size: 1rem;
   margin-bottom: 2rem;
 }
 
+/* Bottoni hero affiancati */
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
 }
 
+/* ===== BOTTONI =====
+   Stile base condiviso tra bottone primario e secondario */
 .btn {
   min-height: 48px;
   display: inline-flex;
@@ -246,18 +296,21 @@ p {
   transform: translateY(-2px);
 }
 
+/* Bottone primario: gradiente azzurro */
 .btn:not(.btn-secondary) {
   background: linear-gradient(135deg, var(--accent), var(--accent-strong));
   color: #071018;
   box-shadow: 0 12px 30px rgba(28, 189, 244, 0.22);
 }
 
+/* Bottone secondario: trasparente con bordo */
 .btn-secondary {
   color: var(--text);
   border: 1px solid var(--border);
   background: rgba(255, 255, 255, 0.03);
 }
 
+/* Contenitore della parte visiva della hero (laptop) */
 .hero-visual {
   display: flex;
   align-items: center;
@@ -266,111 +319,8 @@ p {
   min-height: 440px;
 }
 
-.orbital-scene {
-  position: relative;
-  width: min(35vw, 400px);
-  aspect-ratio: 1;
-  border-radius: 50%;
-  transform-style: preserve-3d;
-  animation: floatScene 10s ease-in-out infinite;
-}
-
-.hero-aura {
-  position: absolute;
-  inset: 12%;
-  border-radius: 50%;
-  background:
-    radial-gradient(circle, rgba(100, 216, 255, 0.18) 0%, rgba(100, 216, 255, 0.08) 30%, rgba(100, 216, 255, 0) 68%);
-  filter: blur(20px);
-  transform: translateZ(10px);
-}
-
-.core {
-  position: absolute;
-  border-radius: 50%;
-}
-
-.core-1 {
-  inset: 34%;
-  background:
-    radial-gradient(circle, rgba(255,255,255,0.96) 0%, rgba(100, 216, 255, 0.55) 36%, rgba(100, 216, 255, 0.05) 72%, transparent 100%);
-  filter: blur(2px);
-  transform: translateZ(40px);
-  box-shadow: 0 0 45px rgba(100, 216, 255, 0.18);
-}
-
-.core-2 {
-  inset: 42%;
-  background:
-    radial-gradient(circle, rgba(255,255,255,0.98) 0%, rgba(100, 216, 255, 0.85) 40%, rgba(100, 216, 255, 0.15) 78%, transparent 100%);
-  transform: translateZ(60px);
-  box-shadow: 0 0 24px rgba(100, 216, 255, 0.28);
-}
-
-.ring {
-  position: absolute;
-  border-radius: 50%;
-  border: 1px solid rgba(100, 216, 255, 0.18);
-  box-shadow: inset 0 0 18px rgba(100, 216, 255, 0.04);
-}
-
-.ring-1 {
-  inset: 8%;
-  transform: rotateX(73deg) rotateY(12deg);
-}
-
-.ring-2 {
-  inset: 18%;
-  transform: rotateY(72deg) rotateZ(18deg);
-  border-color: rgba(255, 255, 255, 0.12);
-}
-
-.ring-3 {
-  inset: 28%;
-  transform: rotateX(24deg) rotateZ(34deg);
-  border-color: rgba(100, 216, 255, 0.12);
-}
-
-.orb {
-  position: absolute;
-  border-radius: 50%;
-  background:
-    radial-gradient(circle at 30% 30%, rgba(255,255,255,0.96), rgba(100,216,255,0.56) 42%, rgba(100,216,255,0.04) 80%, transparent 100%);
-  box-shadow: 0 0 30px rgba(100, 216, 255, 0.12);
-}
-
-.orb-1 {
-  width: 70px;
-  height: 70px;
-  top: 9%;
-  left: 14%;
-  animation: orbitOne 11s linear infinite;
-}
-
-.orb-2 {
-  width: 36px;
-  height: 36px;
-  top: 54%;
-  right: 10%;
-  animation: orbitTwo 13s linear infinite;
-}
-
-.orb-3 {
-  width: 22px;
-  height: 22px;
-  left: 50%;
-  bottom: 6%;
-  animation: orbitThree 8s linear infinite;
-}
-
-.orb-4 {
-  width: 16px;
-  height: 16px;
-  right: 24%;
-  top: 18%;
-  animation: orbitFour 9s linear infinite;
-}
-
+/* ===== INTESTAZIONI SEZIONI =====
+   Etichetta piccola + titolo grande */
 .section-heading {
   margin-bottom: 2.3rem;
 }
@@ -379,12 +329,15 @@ p {
   font-size: clamp(2rem, 4vw, 3rem);
 }
 
+/* ===== SEZIONE CHI SONO =====
+   Tre card affiancate con formazione, approccio e obiettivo */
 .about-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.3rem;
 }
 
+/* Stile condiviso tra card vari elementi del sito */
 .about-card,
 .skills-block,
 .skills-note,
@@ -416,11 +369,15 @@ p {
   color: var(--text-muted);
 }
 
+/* ===== SEZIONE COMPETENZE =====
+   Due blocchi (tecnologie usate + in apprendimento)
+   più una nota testuale */
 .skills-layout {
   display: grid;
   gap: 1.3rem;
 }
 
+/* Tag pillola per ogni skill */
 .skills-tags,
 .project-tags {
   display: flex;
@@ -437,12 +394,14 @@ p {
   font-size: 0.9rem;
 }
 
+/* Tag in apprendimento: più tenue per distinguerli */
 .skill-tag.learning {
   color: var(--text-muted);
   border-color: rgba(255, 255, 255, 0.08);
   background: rgba(255, 255, 255, 0.03);
 }
 
+/* ===== SEZIONE PROGETTI ===== */
 .projects-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -453,6 +412,8 @@ p {
   padding: 1.5rem;
 }
 
+/* Banner decorativo nella card dei siti web —
+   gradiente + griglia in stile blueprint */
 .project-banner {
   position: relative;
   min-height: 160px;
@@ -468,6 +429,7 @@ p {
   padding: 1.2rem;
 }
 
+/* Griglia blueprint nel banner */
 .project-banner-grid {
   position: absolute;
   inset: 0;
@@ -486,6 +448,7 @@ p {
   color: rgba(255,255,255,0.78);
 }
 
+/* Header della card: titolo a sinistra, badge stato a destra */
 .project-header {
   display: flex;
   justify-content: space-between;
@@ -494,6 +457,7 @@ p {
   margin-bottom: 1rem;
 }
 
+/* Badge "Privato" o "Live" */
 .project-status {
   display: inline-flex;
   align-items: center;
@@ -505,6 +469,7 @@ p {
   background: rgba(255,255,255,0.03);
 }
 
+/* Badge Live: azzurro per evidenziare che è online */
 .project-status.live {
   color: var(--accent);
   border-color: rgba(100, 216, 255, 0.2);
@@ -516,6 +481,9 @@ p {
   margin-bottom: 1rem;
 }
 
+/* ===== DROPDOWN ANTEPRIMA =====
+   Bottone che apre/chiude un pannello con immagini o link.
+   Uso max-height per animare l'apertura in CSS */
 .btn-preview-toggle {
   width: 100%;
   margin-top: 1.2rem;
@@ -534,6 +502,7 @@ p {
   border-color: rgba(100, 216, 255, 0.18);
 }
 
+/* Pannello chiuso: altezza 0 e invisibile */
 .preview-dropdown {
   max-height: 0;
   opacity: 0;
@@ -542,12 +511,14 @@ p {
   margin-top: 0;
 }
 
+/* Pannello aperto: si espande con animazione */
 .preview-dropdown.open {
   max-height: 1200px;
   opacity: 1;
   margin-top: 1rem;
 }
 
+/* Griglia immagini anteprima: due colonne */
 .preview-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -572,6 +543,7 @@ p {
   font-size: 0.88rem;
 }
 
+/* Lista link preview siti web */
 .preview-links {
   display: flex;
   flex-direction: column;
@@ -597,10 +569,12 @@ p {
   border-color: rgba(100, 216, 255, 0.2);
 }
 
+/* Link "coming soon": disabilitati visivamente */
 .coming-soon {
   color: var(--text-faint);
 }
 
+/* ===== SEZIONE CONTATTI ===== */
 .contact-intro {
   color: var(--text-muted);
   margin-bottom: 1.4rem;
@@ -611,6 +585,7 @@ p {
   gap: 1rem;
 }
 
+/* Card contatto: icona + info + freccia */
 .contact-card {
   display: flex;
   align-items: center;
@@ -629,6 +604,7 @@ p {
   border-color: rgba(100, 216, 255, 0.2);
 }
 
+/* Icona quadrata con sfondo azzurro tenue */
 .contact-icon {
   width: 42px;
   height: 42px;
@@ -656,6 +632,7 @@ p {
   color: var(--text-faint);
 }
 
+/* Break-all evita che le email lunghe escano dal contenitore */
 .contact-value {
   color: var(--text);
   word-break: break-all;
@@ -666,6 +643,7 @@ p {
   color: var(--accent);
 }
 
+/* ===== FOOTER ===== */
 .site-footer {
   width: min(100% - 2rem, var(--container));
   margin: 0 auto;
@@ -674,6 +652,10 @@ p {
   font-size: 0.92rem;
 }
 
+/* ===== ANIMAZIONI SCROLL (REVEAL) =====
+   Gli elementi partono invisibili e traslati verso il basso.
+   Quando entrano nel viewport il JS aggiunge la classe .visible
+   e l'animazione CSS li porta in posizione */
 .reveal {
   opacity: 0;
   transform: translateY(24px);
@@ -687,35 +669,131 @@ p {
   transform: translateY(0);
 }
 
+/* Ritardi scalati per effetto cascata */
 .reveal-d1 { transition-delay: 0.08s; }
 .reveal-d2 { transition-delay: 0.16s; }
 .reveal-d3 { transition-delay: 0.24s; }
 
-@keyframes floatScene {
-  0%, 100% { transform: rotateX(10deg) rotateY(-10deg) translateY(0); }
-  50% { transform: rotateX(3deg) rotateY(10deg) translateY(-12px); }
+/* ===== LAPTOP 3D =====
+   Laptop stilizzato in CSS puro con schermo,
+   tastiera e trackpad. Più tematico delle sfere
+   per un portfolio di ingegneria informatica */
+
+/* Contenitore con prospettiva per effetto 3D */
+.laptop-scene {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1200px;
+  min-height: 440px;
+  animation: floatLaptop 6s ease-in-out infinite;
 }
 
-@keyframes orbitOne {
-  from { transform: rotate(0deg) translateX(24px) rotate(0deg); }
-  to { transform: rotate(360deg) translateX(24px) rotate(-360deg); }
+/* Animazione floating verticale */
+@keyframes floatLaptop {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
 }
 
-@keyframes orbitTwo {
-  from { transform: rotate(0deg) translateY(-16px) rotate(0deg); }
-  to { transform: rotate(360deg) translateY(-16px) rotate(-360deg); }
+/* Corpo del laptop con rotazione 3D */
+.laptop {
+  width: 420px;
+  transform: rotateX(4deg) rotateY(-2deg);
+  transform-style: preserve-3d;
+  filter: drop-shadow(0 40px 60px rgba(0,0,0,0.5));
+  transition: transform 0.1s ease;
 }
 
-@keyframes orbitThree {
-  from { transform: rotate(0deg) translateX(-12px) rotate(0deg); }
-  to { transform: rotate(360deg) translateX(-12px) rotate(-360deg); }
+/* Schermo: sfondo scuro con bordo azzurro */
+.laptop-screen {
+  width: 100%;
+  aspect-ratio: 16/10;
+  background: #0a0c12;
+  border-radius: 12px;
+  border: 2px solid rgba(100, 216, 255, 0.25);
+  overflow: hidden;
+  position: relative;
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.06),
+    inset 0 0 40px rgba(100,216,255,0.04);
 }
 
-@keyframes orbitFour {
-  from { transform: rotate(0deg) translateY(10px) rotate(0deg); }
-  to { transform: rotate(360deg) translateY(10px) rotate(-360deg); }
+/* Riflesso sottile sullo schermo */
+.laptop-screen::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(100,216,255,0.06) 0%, transparent 60%);
+  pointer-events: none;
 }
 
+.laptop-screen-inner {
+  padding: 0.6rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Tre pallini colorati stile macOS */
+.screen-topbar {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 0.6rem;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.dot-r { background: #ff5f57; } /* rosso — chiudi */
+.dot-y { background: #febc2e; } /* giallo — minimizza */
+.dot-g { background: #28c840; } /* verde — schermo intero */
+
+/* Blocco di codice stilizzato nello schermo */
+.screen-code {
+  font-family: 'Courier New', monospace;
+  font-size: 0.88rem;
+  line-height: 1.8;
+  flex: 1;
+}
+
+.screen-code p {
+  max-width: none;
+  color: rgba(255,255,255,0.55);
+}
+
+/* Colori syntax highlighting del codice */
+.c-kw { color: #c792ea; } /* keyword — viola */
+.c-fn { color: #64d8ff; } /* nome variabile — azzurro */
+.c-str { color: #c3e88d; } /* stringa — verde */
+
+/* Cursore lampeggiante alla fine del codice */
+.c-cursor {
+  color: var(--accent);
+  animation: blink 1.1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+
+/* Ogni tasto: rettangolo semitrasparente */
+.kb-row span {
+  flex: 1;
+  height: 10px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 3px;
+  border: 1px solid rgba(255,255,255,0.04);
+  max-width: 22px;
+}
+
+/* ===== ACCESSIBILITÀ — REDUCED MOTION =====
+   Se l'utente ha impostato "riduci movimento" nel sistema,
+   disabilito tutte le animazioni */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -728,32 +806,46 @@ p {
     transition: none;
   }
 
-  .orbital-scene,
-  .orb {
+  .laptop-scene,
+  .c-cursor {
     animation: none;
   }
 }
 
+/* ===== TABLET (max 980px) =====
+   Su schermi medi la hero passa a colonna singola
+   con il laptop sopra il testo.
+   Le card "Chi sono" diventano verticali */
 @media (max-width: 980px) {
   #hero {
     grid-template-columns: 1fr;
     gap: 2.2rem;
   }
 
+  /* Il laptop va sopra il testo */
   .hero-visual {
     order: -1;
-    min-height: 340px;
+    min-height: 300px;
   }
 
-  .orbital-scene {
-    width: min(72vw, 330px);
+  /* Laptop più piccolo su tablet */
+  .laptop {
+    width: 260px;
   }
 
+  .screen-code {
+    font-size: 0.75rem;
+  }
+
+  /* Le tre card "Chi sono" si impilano */
   .about-grid {
     grid-template-columns: 1fr;
   }
 }
 
+/* ===== MOBILE (max 768px) =====
+   Navbar con hamburger, sezioni più strette,
+   layout adattato per schermi piccoli */
 @media (max-width: 768px) {
   section {
     width: min(100% - 1.2rem, var(--container));
@@ -765,10 +857,12 @@ p {
     padding: 0 0.9rem;
   }
 
+  /* Mostro il bottone hamburger */
   .hamburger {
     display: inline-flex;
   }
 
+  /* Il menu a tendina appare sotto la navbar quando è aperto */
   .nav-links {
     position: absolute;
     top: calc(100% + 1px);
@@ -785,6 +879,7 @@ p {
     border-radius: 0 0 18px 18px;
   }
 
+  /* Classe aggiunta dal JS quando clicco hamburger */
   .nav-links.open {
     display: flex;
   }
@@ -799,15 +894,19 @@ p {
     color: var(--text);
   }
 
+  /* Più spazio in cima per la navbar fissa */
   #hero {
     padding-top: calc(var(--nav-height) + 3rem);
   }
 
+  /* Anteprima immagini: una sola colonna su mobile */
   .preview-grid {
     grid-template-columns: 1fr;
   }
 
+  /* Header progetto: titolo e badge si impilano */
   .project-header {
     flex-direction: column;
   }
 }
+

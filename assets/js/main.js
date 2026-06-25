@@ -86,3 +86,36 @@
     });
   });
 })();
+
+/* EFFETTO 3D — il laptop segue il cursore del mouse */
+(function () {
+  const scene = document.querySelector('.laptop-scene');
+  const laptop = document.querySelector('.laptop');
+
+  if (!scene || !laptop) return;
+
+  /* Rotazione base del laptop senza mouse */
+  const baseX = 18;
+  const baseY = -18;
+
+  scene.addEventListener('mousemove', (e) => {
+    const rect = scene.getBoundingClientRect();
+
+    /* Calcolo posizione relativa del mouse nel contenitore
+       da -1 a +1 su entrambi gli assi */
+    const x = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
+    const y = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
+
+    /* Applico rotazione aggiuntiva in base al cursore
+       max ±10 gradi extra rispetto alla base */
+    const rotX = baseX - y * 10;
+    const rotY = baseY + x * 10;
+
+    laptop.style.transform = `rotateX(${rotX}deg) rotateY(${rotY}deg)`;
+  });
+
+  /* Quando il cursore esce torno alla rotazione base */
+  scene.addEventListener('mouseleave', () => {
+    laptop.style.transform = `rotateX(${baseX}deg) rotateY(${baseY}deg)`;
+  });
+})();
