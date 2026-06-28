@@ -667,13 +667,59 @@ p {
   text-decoration: none;
   color: var(--text);
   background: rgba(255,255,255,0.02);
+  transition:
+    transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    background 0.28s cubic-bezier(0.22, 1, 0.36, 1);
 }
-
 
 .contact-card:hover,
 .contact-card:focus-visible {
-  transform: translateY(-2px);
-  border-color: rgba(100, 216, 255, 0.2);
+  transform: translateY(-4px);
+  border-color: rgba(100, 216, 255, 0.28);
+  background: rgba(100, 216, 255, 0.05);
+  box-shadow:
+    0 14px 30px rgba(0, 0, 0, 0.22),
+    0 0 0 1px rgba(100, 216, 255, 0.08);
+}
+
+.contact-icon,
+.contact-arrow {
+  transition:
+    transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    color 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.contact-card:hover .contact-icon,
+.contact-card:focus-visible .contact-icon {
+  transform: translateY(-1px) scale(1.06);
+}
+
+.contact-card:hover .contact-arrow,
+.contact-card:focus-visible .contact-arrow {
+  transform: translateX(4px);
+  color: #8be7ff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-card,
+  .contact-icon,
+  .contact-arrow {
+    transition: none;
+  }
+
+  .contact-card:hover,
+  .contact-card:focus-visible {
+    transform: none;
+  }
+
+  .contact-card:hover .contact-icon,
+  .contact-card:focus-visible .contact-icon,
+  .contact-card:hover .contact-arrow,
+  .contact-card:focus-visible .contact-arrow {
+    transform: none;
+  }
 }
 
 
@@ -909,7 +955,7 @@ p {
 }
 
 
-/* ===== ACCESSIBILITÀ — REDUCED MOTION =====
+/* ===== ACCESSIBILITÀ =====
    Se l'utente ha impostato "riduci movimento" nel sistema,
    disabilito tutte le animazioni */
 @media (prefers-reduced-motion: reduce) {
@@ -942,7 +988,7 @@ p {
   }
 
   .hero-visual {
-    order: -1;
+    order: 1;
     min-height: 300px;
   }
 
