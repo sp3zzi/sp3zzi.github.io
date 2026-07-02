@@ -1106,3 +1106,107 @@ p {
     flex-direction: column;
   }
 }
+
+/* ===== SEZIONE PIANO DI STUDI =====
+   Tre colonne per anno, con lista corsi.
+   I corsi a scelta autonoma hanno un badge distinto */
+.education-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.3rem;
+  margin-bottom: 1.5rem;
+}
+
+.education-year {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  padding: 1.5rem;
+}
+
+/* Etichetta anno (es. "Primo anno") */
+.year-label {
+  color: var(--accent);
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  margin-bottom: 1rem;
+  max-width: none;
+}
+
+/* Lista corsi senza pallini */
+.course-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.course-list li {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  padding-left: 0.8rem;
+  border-left: 2px solid var(--border);
+  line-height: 1.4;
+}
+
+/* Corsi a scelta autonoma: bordo azzurro e badge */
+.course-list li.course-elective {
+  border-left-color: var(--accent);
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.course-elective span {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  border: 1px solid rgba(100, 216, 255, 0.2);
+  background: rgba(100, 216, 255, 0.06);
+  border-radius: 999px;
+  padding: 0.18rem 0.55rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Link UniBS in fondo */
+.education-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #071018;
+  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  animation: glowPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 12px rgba(100, 216, 255, 0.3); }
+  50% { box-shadow: 0 0 28px rgba(100, 216, 255, 0.7); }
+}
+
+.education-link:hover {
+  transform: translateY(-2px);
+}
+
+.education-link-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+/* Su tablet e mobile le tre colonne si impilano */
+@media (max-width: 980px) {
+  .education-grid {
+    grid-template-columns: 1fr;
+  }
+}
