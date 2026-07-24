@@ -21,376 +21,437 @@
 <body>
   <a class="skip-link" href="#main-content">Salta al contenuto</a>
 
-  <nav id="navbar" aria-label="Navigazione principale">
-    <a href="#hero" class="nav-logo">Andrea Speziari</a>
+  <div class="app-shell">
 
-    <button
-      class="hamburger"
-      id="hamburger"
-      type="button"
-      aria-label="Apri il menu"
-      aria-expanded="false"
-      aria-controls="nav-links"
-    >
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-
-    <ul class="nav-links" id="nav-links">
-      <li><a href="#about">Chi sono</a></li>
-      <li><a href="#skills">Competenze</a></li>
-      <li><a href="#projects">Progetti</a></li>
-      <li><a href="#contact">Contatti</a></li>
-    </ul> 
-  </nav>
-
-  <main id="main-content">
-    <section id="hero">
-      <div class="hero-copy reveal">
-        <p class="hero-kicker">Portfolio </p>
-        <h1>Ciao, sono <span>Andrea Speziari</span></h1>
-
-        <p class="hero-lead">
-          Sono uno studente al terzo anno di Ingegneria Informatica presso l’Università degli Studi di Brescia.
-          Nel tempo libero sviluppo progetti web, tool digitali e piccole soluzioni pratiche, con l’obiettivo di fare esperienza, migliorare ogni giorno e costruire competenze sempre più solide.
-        </p>
-
-        <p class="hero-support">
-          Ho già realizzato alcuni progetti concreti, ma resto aperto a ambiti diversi:
-          sviluppo web, automazione, AI applicata, software e strumenti utili.
-          In questa fase voglio soprattutto mettermi alla prova, imparare più skill possibili e capire sul campo dove posso dare il meglio.
-        </p>
-
-        <div class="hero-actions">
-          <a href="#projects" class="btn">Vedi i progetti</a>
-          <a href="#contact" class="btn btn-secondary">Contattami</a>
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="sidebar" aria-label="Profilo">
+      <div class="sidebar-top">
+        <!-- Placeholder avatar: sostituire con <img src="assets/images/avatar.jpg" alt="Andrea Speziari" class="avatar"> quando disponibile -->
+        <div class="avatar-placeholder" aria-hidden="true">
+          <span>AS</span>
         </div>
+
+        <h1 class="sidebar-name">Andrea Speziari</h1>
+        <p class="sidebar-role">Studente Ingegneria Informatica</p>
+
+        <span class="status-badge">
+          <span class="status-dot"></span>
+          Aperto a opportunità
+        </span>
       </div>
 
-      <div class="hero-visual reveal reveal-d1" aria-hidden="true">
-        <div class="laptop-scene">
-          <div class="laptop">
-            <!-- Schermo -->
-            <div class="laptop-screen">
-              <div class="laptop-screen-inner">
-                <div class="screen-topbar">
-                  <span class="dot dot-r"></span>
-                  <span class="dot dot-y"></span>
-                  <span class="dot dot-g"></span>
-                </div>
-                <div class="screen-code">
-                  <div class="fake-code">
-                    <div class="code-line"> 
-                      <span class="c-kw">const</span>
-                      <span class="c-fn">Andrea</span>
-                      <span class="c-punc">= {</span>
-                    </div>
-                    <div class="code-line indent desktop-only">
-                      <span class="c-prop">Ruolo</span><span class="c-punc">:</span>
-                      <span class="c-str">"Studente Ing. Informatica"</span><span class="c-punc">,</span>
-                    </div>
-                    <div class="code-line indent desktop-only">
-                      <span class="c-prop">Obiettivo</span><span class="c-punc">:</span>
-                      <span class="c-str">"Crescere facendo esperienza"</span><span class="c-punc">,</span>
-                    </div>
-                    <div class="code-line indent desktop-only">
-                      <span class="c-prop">Status</span><span class="c-punc">:</span>
-                      <span class="c-str">"Aperto a nuove opportunità"</span><span class="c-punc">,</span>
-                    </div>
-                    <div class="code-line indent mobile-only">
-                      <span class="c-prop">Ruolo</span><span class="c-punc">:</span>
-                      <span class="c-str">"Studente Ing. Informatica"</span><span class="c-punc">,</span>
-                    </div>
-                    <div class="code-line indent mobile-only">
-                      <span class="c-prop">Obiettivo</span><span class="c-punc">:</span>
-                      <span class="c-str">"Crescere"</span><span class="c-punc">,</span>
-                    </div>
-                    <div class="code-line indent mobile-only">
-                      <span class="c-prop">Status</span><span class="c-punc">:</span>
-                      <span class="c-str">"Aperto a opportunità"</span><span class="c-punc">,</span>
-                    </div>
-                    <div class="code-line">
-                      <span class="c-punc">};</span>
-                      <span class="c-cursor">|</span>  
+      <ul class="sidebar-contacts">
+        <li>
+          <span class="sc-label">Email</span>
+          <a href="mailto:spezioandre@gmail.com" class="sc-value">spezioandre@gmail.com</a>
+        </li>
+        <li>
+          <span class="sc-label">GitHub</span>
+          <a href="https://github.com/sp3zzi" target="_blank" rel="noopener noreferrer" class="sc-value">github.com/sp3zzi</a>
+        </li>
+        <li>
+          <span class="sc-label">Sede</span>
+          <span class="sc-value">Brescia, Italia</span>
+        </li>
+      </ul>
+
+      <!-- Il file CV va inserito in assets/docs/Andrea_Speziari_CV.pdf -->
+      <a href="assets/docs/Andrea_Speziari_CV.pdf" download class="btn-download-cv">
+        <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 3v10m0 0-4-4m4 4 4-4M4 16h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Scarica CV
+      </a>
+    </aside>
+
+    <!-- ===== CONTENUTO ===== -->
+    <div class="content-area">
+
+      <nav class="tabs-nav" aria-label="Sezioni portfolio">
+        <button class="tab-btn active" type="button" data-tab="about">Chi sono</button>
+        <button class="tab-btn" type="button" data-tab="percorso">Percorso</button>
+        <button class="tab-btn" type="button" data-tab="progetti">Progetti</button>
+        <button class="tab-btn" type="button" data-tab="contatti">Contatti</button>
+      </nav>
+
+      <main id="main-content">
+
+        <!-- ===== TAB: CHI SONO ===== -->
+        <section class="tab-panel active" id="panel-about" data-panel="about">
+
+          <div class="about-hero reveal">
+            <div class="about-hero-copy">
+              <p class="panel-label">Profilo</p>
+              <h2>Ciao, sono <span>Andrea</span></h2>
+              <p class="about-lead">
+                Sono uno studente al terzo anno di Ingegneria Informatica presso l'Università degli Studi di Brescia.
+                Nel tempo libero sviluppo progetti web, tool digitali e piccole soluzioni pratiche, con l'obiettivo di
+                fare esperienza, migliorare ogni giorno e costruire competenze sempre più solide. Mi piace trasformare
+                idee concrete in progetti funzionanti: negli ultimi lavori ho sperimentato siti web, interfacce, tool
+                di automazione e piccoli sistemi utili, cercando sempre un equilibrio tra semplicità, chiarezza e
+                utilità reale. Sto ancora costruendo esperienza, quindi preferisco restare aperto a più possibilità:
+                sviluppo web, automazione, AI applicata, software e strumenti utili. In questa fase voglio soprattutto
+                mettermi alla prova, imparare più skill possibili e capire sul campo dove posso dare il meglio.
+              </p>
+            </div>
+
+            <div class="about-hero-visual reveal reveal-d1" aria-hidden="true">
+              <div class="laptop-scene">
+                <div class="laptop">
+                  <div class="laptop-screen">
+                    <div class="laptop-screen-inner">
+                      <div class="screen-topbar">
+                        <span class="dot dot-r"></span>
+                        <span class="dot dot-y"></span>
+                        <span class="dot dot-g"></span>
+                      </div>
+                      <div class="screen-code">
+                        <div class="fake-code">
+                          <div class="code-line">
+                            <span class="c-kw">const</span>
+                            <span class="c-fn">Andrea</span>
+                            <span class="c-punc">= {</span>
+                          </div>
+                          <div class="code-line indent desktop-only">
+                            <span class="c-prop">Ruolo</span><span class="c-punc">:</span>
+                            <span class="c-str">"Studente Ing. Informatica"</span><span class="c-punc">,</span>
+                          </div>
+                          <div class="code-line indent desktop-only">
+                            <span class="c-prop">Obiettivo</span><span class="c-punc">:</span>
+                            <span class="c-str">"Crescere facendo esperienza"</span><span class="c-punc">,</span>
+                          </div>
+                          <div class="code-line indent desktop-only">
+                            <span class="c-prop">Status</span><span class="c-punc">:</span>
+                            <span class="c-str">"Aperto a nuove opportunità"</span><span class="c-punc">,</span>
+                          </div>
+                          <div class="code-line indent mobile-only">
+                            <span class="c-prop">Ruolo</span><span class="c-punc">:</span>
+                            <span class="c-str">"Studente Ing. Informatica"</span><span class="c-punc">,</span>
+                          </div>
+                          <div class="code-line indent mobile-only">
+                            <span class="c-prop">Obiettivo</span><span class="c-punc">:</span>
+                            <span class="c-str">"Crescere"</span><span class="c-punc">,</span>
+                          </div>
+                          <div class="code-line indent mobile-only">
+                            <span class="c-prop">Status</span><span class="c-punc">:</span>
+                            <span class="c-str">"Aperto a opportunità"</span><span class="c-punc">,</span>
+                          </div>
+                          <div class="code-line">
+                            <span class="c-punc">};</span>
+                            <span class="c-cursor">|</span>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
 
-    <section id="about">
-      <div class="section-heading reveal">
-        <p class="section-label">Profilo</p>
-        <h2>Chi sono</h2>
-      </div>
-
-      <div class="about-grid">
-        <article class="about-card reveal reveal-d1">
-          <h3>Formazione</h3>
-          <p>
-            Studio Ingegneria Informatica all’Università degli Studi di Brescia e attualmente frequento il terzo anno.
-            Il mio percorso mi sta aiutando a costruire basi tecniche solide e un approccio orientato al problem solving.
-          </p>
-        </article>
-
-        <article class="about-card reveal reveal-d2">
-          <h3>Approccio</h3>
-          <p>
-            Mi piace trasformare idee concrete in progetti funzionanti.
-            Negli ultimi lavori ho sperimentato siti web, interfacce, tool di automazione e piccoli sistemi utili, cercando sempre un equilibrio tra semplicità, chiarezza e utilità reale.
-          </p>
-        </article>
-
-        <article class="about-card reveal reveal-d3">
-          <h3>Obiettivo</h3>
-          <p>
-            Sto ancora costruendo esperienza, quindi preferisco restare aperto a più possibilità.
-            Voglio imparare, testare tecnologie diverse e capire con il tempo in quali ambiti specializzarmi davvero.
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <section id="skills">
-      <div class="section-heading reveal">
-        <p class="section-label">Competenze</p>
-        <h2>Stack e strumenti</h2>
-      </div>
-
-      <div class="skills-layout">
-        <div class="skills-block reveal reveal-d1">
-          <h3>Tecnologie con cui ho già lavorato</h3>
-          <div class="skills-tags">
-            <span class="skill-tag">HTML</span>
-            <span class="skill-tag">CSS</span>
-            <span class="skill-tag">Java</span>
-            <span class="skill-tag">Git</span>
-            <span class="skill-tag">GitHub</span>
-            <span class="skill-tag">VS Code</span>
-          </div>
-        </div>
-
-        <div class="skills-block reveal reveal-d2">
-          <h3>Tecnologie che sto approfondendo</h3>
-          <div class="skills-tags">
-            <span class="skill-tag learning">JavaScript</span>
-            <span class="skill-tag learning">Python</span>
-            <span class="skill-tag learning">SQL</span>
-            <span class="skill-tag learning">AI applicata</span>
-            <span class="skill-tag learning">API integration</span>
-            <span class="skill-tag learning">UI/UX</span>
-          </div>
-        </div>
-
-        <div class="skills-note reveal reveal-d3">
-          <p>
-            In questa fase del mio percorso preferisco continuare a esplorare più ambiti, lavorare su progetti reali e costruire esperienza pratica su tecnologie diverse.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section id="education">
-      <div class="section-heading reveal">
-        <p class="section-label">Università</p>
-        <h2>Piano di studi</h2>
-      </div>
-
-      <div class="education-grid">
-
-        <div class="education-year reveal reveal-d1">
-          <p class="year-label">Primo anno</p>
-          <ul class="course-list">
-            <li>Algebra e Geometria</li>
-            <li>Analisi Matematica I</li>
-            <li>Elementi di Chimica</li>
-            <li>Fisica Sperimentale I</li>
-            <li>Probabilità e Statistica</li>
-            <li>Fondamenti di Informatica e Programmazione</li>
-            <li>Lingua Straniera</li>
-          </ul>
-        </div>
-
-        <div class="education-year reveal reveal-d2">
-          <p class="year-label">Secondo anno</p>
-          <ul class="course-list">
-            <li>Analisi Matematica e Ricerca Operativa</li>
-            <li>Fisica Sperimentale (Elettromagnetismo)</li>
-            <li>Calcolatori Elettronici</li>
-            <li>Circuiti Elettrici per l'Elettronica</li>
-            <li>Reti di Telecomunicazione</li>
-            <li>Economia Applicata all'Ingegneria</li>
-            <li>Fondamenti di Automatica</li>
-            <li>Programmazione Avanzata Java e C</li>
-          </ul>
-        </div>
-
-        <div class="education-year reveal reveal-d3">
-          <p class="year-label">Terzo anno</p>
-          <ul class="course-list">
-            <li>Sistemi Operativi e Impianti Informatici</li>
-            <li>Ingegneria del Software</li>
-            <li>Linguaggi di Programmazione e Basi di Dati</li>
-            <li>Elettronica Generale</li>
-            <li>Normative TLC</li>
-            <li class="course-elective">Sistemi per l'Industria e PLC <span>a scelta</span></li>
-            <li class="course-elective">Tecnologie dei Linguaggi Artificiali <span>a scelta</span></li>
-          </ul>
-        </div>
-
-      </div>
-
-      <div class="education-link-wrapper">
-        <a href="https://unibs.coursecatalogue.cineca.it/corsi/2021/1476?linguaCC=it&codicione=0170106200800004" target="_blank" rel="noopener noreferrer" class="education-link reveal">Scopri il mio percorso universitario</a>
-      </div>
-      
-    </section>
-
-    <section id="projects">
-      <div class="section-heading reveal">
-        <p class="section-label">Progetti</p>
-        <h2>Lavori selezionati</h2>
-      </div>
-
-      <div class="projects-grid">
-        <article class="project-card reveal reveal-d1">
-          <div class="project-header">
-            <div>
-              <p class="project-type">Tool web</p>
-              <h3>Azienda Finder</h3>
+          <div class="stat-cards reveal reveal-d1">
+            <div class="stat-card">
+              <span class="stat-number">3°</span>
+              <span class="stat-label">Anno di corso</span>
             </div>
-            <span class="project-status">Privato</span>
+            <div class="stat-card">
+              <span class="stat-number">2</span>
+              <span class="stat-label">Progetti realizzati</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">6+</span>
+              <span class="stat-label">Tecnologie in uso</span>
+            </div>
           </div>
 
-            <p class="project-text">
-            Tool web sviluppato per automatizzare la ricerca di potenziali clienti sul territorio.
-            Raccoglie aziende per comune, integra Google Places API e OpenStreetMap e individua mail trovate o generate per facilitare il contatto.
+          <div class="doing-block reveal reveal-d2">
+            <h3 class="block-title">Di cosa mi occupo</h3>
+            <div class="doing-grid">
+              <div class="doing-card">
+                <span class="doing-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                </span>
+                <h4>Sviluppo Web</h4>
+                <p>Siti e interfacce con HTML, CSS e JavaScript, curando struttura, leggibilità e responsive design.</p>
+              </div>
+              <div class="doing-card">
+                <span class="doing-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M12 3v6m0 0-3-3m3 3 3-3M5 14h14l-1.5 6h-11L5 14Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <h4>Tool & Automazione</h4>
+                <p>Script e applicazioni Python per automatizzare processi, integrando API esterne e gestione dati.</p>
+              </div>
+              <div class="doing-card">
+                <span class="doing-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M3 9h18" stroke="currentColor" stroke-width="1.6"/></svg>
+                </span>
+                <h4>UI / UX</h4>
+                <p>Layout, gerarchia dei contenuti e usabilità mobile, con attenzione alla chiarezza visiva.</p>
+              </div>
+              <div class="doing-card doing-card-learning">
+                <span class="doing-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M12 2 3 7l9 5 9-5-9-5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M3 12l9 5 9-5M3 17l9 5 9-5" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+                </span>
+                <h4>In apprendimento: AI applicata</h4>
+                <p>Sto studiando come integrare modelli e API di intelligenza artificiale in progetti reali.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===== TAB: PERCORSO ===== -->
+        <section class="tab-panel" id="panel-percorso" data-panel="percorso">
+          <div class="section-heading reveal">
+            <p class="panel-label">Università</p>
+            <h2>Percorso e competenze</h2>
+          </div>
+
+          <div class="timeline reveal reveal-d1">
+            <div class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <p class="timeline-year">Primo anno</p>
+                <ul class="course-list">
+                  <li>Algebra e Geometria</li>
+                  <li>Analisi Matematica I</li>
+                  <li>Elementi di Chimica</li>
+                  <li>Fisica Sperimentale I</li>
+                  <li>Probabilità e Statistica</li>
+                  <li>Fondamenti di Informatica e Programmazione</li>
+                  <li>Lingua Straniera: Inglese</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <p class="timeline-year">Secondo anno</p>
+                <ul class="course-list">
+                  <li>Analisi Matematica e Ricerca Operativa</li>
+                  <li>Fisica Sperimentale (Elettromagnetismo)</li>
+                  <li>Calcolatori Elettronici</li>
+                  <li>Circuiti Elettrici per l'Elettronica</li>
+                  <li>Reti di Telecomunicazione</li>
+                  <li>Economia Applicata all'Ingegneria</li>
+                  <li>Fondamenti di Automatica</li>
+                  <li>Programmazione Avanzata Java e C</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="timeline-item timeline-item-current">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <p class="timeline-year">Terzo anno <span class="timeline-current-tag">In corso</span></p>
+                <ul class="course-list">
+                  <li>Sistemi Operativi e Impianti Informatici</li>
+                  <li>Ingegneria del Software</li>
+                  <li>Linguaggi di Programmazione e Basi di Dati</li>
+                  <li>Elettronica Generale</li>
+                  <li>Normative TLC</li>
+                  <li class="course-elective">Sistemi per l'Industria e PLC <span>a scelta</span></li>
+                  <li class="course-elective">Tecnologie dei Linguaggi Artificiali <span>a scelta</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="education-link-wrapper reveal">
+            <a href="https://unibs.coursecatalogue.cineca.it/corsi/2021/1476?linguaCC=it&codicione=0170106200800004" target="_blank" rel="noopener noreferrer" class="education-link">Scopri il mio percorso universitario</a>
+          </div>
+
+          <div class="skills-block-wrapper reveal reveal-d2">
+            <h3 class="block-title">Skills & Strumenti</h3>
+            <div class="skills-columns">
+              <div class="skills-col">
+                <p class="skills-col-label">Linguaggi & tool</p>
+                <div class="skills-tags">
+                  <span class="skill-tag">HTML</span>
+                  <span class="skill-tag">CSS</span>
+                  <span class="skill-tag">Java</span>
+                  <span class="skill-tag">Git</span>
+                  <span class="skill-tag">GitHub</span>
+                  <span class="skill-tag">VS Code</span>
+                </div>
+              </div>
+              <div class="skills-col">
+                <p class="skills-col-label">In apprendimento</p>
+                <div class="skills-tags">
+                  <span class="skill-tag learning">JavaScript</span>
+                  <span class="skill-tag learning">Python</span>
+                  <span class="skill-tag learning">SQL</span>
+                  <span class="skill-tag learning">AI applicata</span>
+                  <span class="skill-tag learning">API integration</span>
+                  <span class="skill-tag learning">UI/UX</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===== TAB: PROGETTI ===== -->
+        <section class="tab-panel" id="panel-progetti" data-panel="progetti">
+          <div class="section-heading reveal">
+            <p class="panel-label">Progetti</p>
+            <h2>Lavori selezionati</h2>
+          </div>
+
+          <div class="projects-grid">
+            <article class="project-card reveal reveal-d1">
+              <div class="project-header">
+                <div>
+                  <p class="project-type">Tool web</p>
+                  <h3>Azienda Finder</h3>
+                </div>
+                <span class="project-status">Privato</span>
+              </div>
+
+              <p class="project-text">
+                Tool web sviluppato per automatizzare la ricerca di potenziali clienti sul territorio.
+                Raccoglie aziende per comune, integra Google Places API e OpenStreetMap e individua mail trovate o generate per facilitare il contatto.
+              </p>
+              <p class="project-text">
+                Le aziende possono essere salvate in un archivio organizzato per comune, esportate in PDF e selezionate in una coda di invio.
+                Il sistema permette anche di aprire direttamente il client di posta con i destinatari già precompilati, velocizzando le comunicazioni multiple.
+                La struttura del tool può essere estesa a settori diversi, aggiungendo filtri e criteri di ricerca più specifici.
+              </p>
+              <p class="project-text">
+                Oltre alla parte di ricerca, ho lavorato anche su un controllo delle chiamate API per limitare costi e utilizzi imprevisti.
+              </p>
+
+              <div class="project-tags">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">Flask</span>
+                <span class="skill-tag">Google Places API</span>
+                <span class="skill-tag">OpenStreetMap</span>
+                <span class="skill-tag">PDF export</span>
+              </div>
+
+              <button class="btn-preview-toggle" type="button" aria-expanded="false">
+                Mostra anteprima
+              </button>
+
+              <div class="preview-dropdown">
+                <div class="preview-grid">
+                  <figure class="preview-item">
+                    <img src="assets/images/azienda-finder-1.png" alt="Schermata home di Azienda Finder" loading="lazy" />
+                    <figcaption>Home e ricerca aziende</figcaption>
+                  </figure>
+                  <figure class="preview-item">
+                    <img src="assets/images/azienda-finder-2.png" alt="Schermata archivio di Azienda Finder" loading="lazy" />
+                    <figcaption>Archivio comuni e dati raccolti</figcaption>
+                  </figure>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card reveal reveal-d2">
+              <div class="project-banner">
+                <div class="project-banner-grid"></div>
+                <span>Web templates</span>
+              </div>
+
+              <div class="project-header">
+                <div>
+                  <p class="project-type">Siti web</p>
+                  <h3>Siti per attività locali</h3>
+                </div>
+                <span class="project-status live">Live</span>
+              </div>
+
+              <p class="project-text">
+                Raccolta di template web pensati per piccole attività locali, con struttura chiara, contatti immediati e presentazione semplice dei servizi.
+                L'obiettivo è creare basi riutilizzabili e adattabili a settori diversi.
+              </p>
+
+              <p class="project-text">
+                In questi progetti ho lavorato soprattutto su layout, gerarchia dei contenuti, usabilità mobile e chiarezza visiva.
+              </p>
+
+              <div class="project-tags">
+                <span class="skill-tag">HTML</span>
+                <span class="skill-tag">CSS</span>
+                <span class="skill-tag">Responsive design</span>
+                <span class="skill-tag">UI structure</span>
+              </div>
+
+              <button class="btn-preview-toggle" type="button" aria-expanded="false">
+                Mostra link e preview
+              </button>
+
+              <div class="preview-dropdown">
+                <div class="preview-links">
+                  <a href="https://previw-estetisti.netlify.app/" target="_blank" rel="noopener noreferrer">Centro Estetico</a>
+                  <a href="https://preview-parrucchieri.netlify.app/" target="_blank" rel="noopener noreferrer">Parrucchieri</a>
+                  <a href="https://preview-tatuatori.netlify.app/" target="_blank" rel="noopener noreferrer">Tatuatori</a>
+                  <a href="https://preview-ristoranti.netlify.app/" target="_blank" rel="noopener noreferrer">Ristoranti</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- ===== TAB: CONTATTI ===== -->
+        <section class="tab-panel" id="panel-contatti" data-panel="contatti">
+          <div class="section-heading reveal">
+            <p class="panel-label">Contatti</p>
+            <h2>Parliamone</h2>
+          </div>
+
+          <div class="contact-wrapper reveal reveal-d1">
+            <p class="contact-intro">
+              Sono interessato a opportunità in cui poter continuare a imparare, collaborare e fare esperienza pratica.
+              Se vuoi contattarmi per un progetto, un confronto o una possibilità di lavoro, puoi scrivermi qui.
             </p>
-            <p class="project-text">
-            Le aziende possono essere salvate in un archivio organizzato per comune, esportate in PDF e selezionate in una coda di invio.
-            Il sistema permette anche di aprire direttamente il client di posta con i destinatari già precompilati, velocizzando le comunicazioni multiple.
-            La struttura del tool può essere estesa a settori diversi, aggiungendo filtri e criteri di ricerca più specifici.
-            </p>
 
-          <p class="project-text">
-            Oltre alla parte di ricerca, ho lavorato anche su un controllo delle chiamate API per limitare costi e utilizzi imprevisti.
-          </p>
+            <div class="contact-grid">
+              <a href="mailto:spezioandre@gmail.com" class="contact-card">
+                <span class="contact-icon">✉</span>
+                <span class="contact-meta">
+                  <span class="contact-label">Email</span>
+                  <span class="contact-value">spezioandre@gmail.com</span>
+                </span>
+                <span class="contact-arrow">→</span>
+              </a>
 
-          <div class="project-tags">
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">Flask</span>
-            <span class="skill-tag">Google Places API</span>
-            <span class="skill-tag">OpenStreetMap</span>
-            <span class="skill-tag">PDF export</span>
-          </div>
-
-          <button class="btn-preview-toggle" type="button" aria-expanded="false">
-            Mostra anteprima
-          </button>
-
-          <div class="preview-dropdown">
-            <div class="preview-grid">
-              <figure class="preview-item">
-                <img src="assets/images/azienda-finder-1.png" alt="Schermata home di Azienda Finder" loading="lazy" />
-                <figcaption>Home e ricerca aziende</figcaption>
-              </figure>
-              <figure class="preview-item">
-                <img src="assets/images/azienda-finder-2.png" alt="Schermata archivio di Azienda Finder" loading="lazy" />
-                <figcaption>Archivio comuni e dati raccolti</figcaption>
-              </figure>
+              <a href="https://github.com/sp3zzi" target="_blank" rel="noopener noreferrer" class="contact-card">
+                <span class="contact-icon">⌘</span>
+                <span class="contact-meta">
+                  <span class="contact-label">GitHub</span>
+                  <span class="contact-value">github.com/sp3zzi</span>
+                </span>
+                <span class="contact-arrow">→</span>
+              </a>
             </div>
           </div>
-        </article>
+        </section>
 
-        <article class="project-card reveal reveal-d2">
-          <div class="project-banner">
-            <div class="project-banner-grid"></div>
-            <span>Web templates</span>
-          </div>
+      </main>
 
-          <div class="project-header">
-            <div>
-              <p class="project-type">Siti web</p>
-              <h3>Siti per attività locali</h3>
-            </div>
-            <span class="project-status live">Live</span>
-          </div>
+      <footer class="site-footer">
+        <p>Andrea Speziari — Portfolio</p>
+      </footer>
+    </div>
+  </div>
 
-          <p class="project-text">
-            Raccolta di template web pensati per piccole attività locali, con struttura chiara, contatti immediati e presentazione semplice dei servizi.
-            L’obiettivo è creare basi riutilizzabili e adattabili a settori diversi.
-          </p>
-
-          <p class="project-text">
-            In questi progetti ho lavorato soprattutto su layout, gerarchia dei contenuti, usabilità mobile e chiarezza visiva.
-          </p>
-
-          <div class="project-tags">
-            <span class="skill-tag">HTML</span>
-            <span class="skill-tag">CSS</span>
-            <span class="skill-tag">Responsive design</span>
-            <span class="skill-tag">UI structure</span>
-          </div>
-
-          <button class="btn-preview-toggle" type="button" aria-expanded="false">
-            Mostra link e preview
-          </button>
-
-          <div class="preview-dropdown">
-            <div class="preview-links">
-              <a href="https://previw-estetisti.netlify.app/" target="_blank" rel="noopener noreferrer">Centro Estetico</a>
-              <a href="https://preview-parrucchieri.netlify.app/" target="_blank" rel="noopener noreferrer">Parrucchieri</a>
-              <a href="https://preview-tatuatori.netlify.app/" target="_blank" rel="noopener noreferrer">Tatuatori</a>
-              <a href="https://preview-ristoranti.netlify.app/" target="_blank" rel="noopener noreferrer">Ristoranti</a>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="section-heading reveal">
-        <p class="section-label">Contatti</p>
-        <h2>Parliamone</h2>
-      </div>
-
-      <div class="contact-wrapper reveal reveal-d1">
-        <p class="contact-intro">
-          Sono interessato a opportunità in cui poter continuare a imparare, collaborare e fare esperienza pratica.
-          Se vuoi contattarmi per un progetto, un confronto o una possibilità di lavoro, puoi scrivermi qui.
-        </p>
-
-        <div class="contact-grid">
-          <a href="mailto:spezioandre@gmail.com" class="contact-card">
-            <span class="contact-icon">✉</span>
-            <span class="contact-meta">
-              <span class="contact-label">Email</span>
-              <span class="contact-value">spezioandre@gmail.com</span>
-            </span>
-            <span class="contact-arrow">→</span>
-          </a>
-
-          <a href="https://github.com/sp3zzi" target="_blank" rel="noopener noreferrer" class="contact-card">
-            <span class="contact-icon">⌘</span>
-            <span class="contact-meta">
-              <span class="contact-label">GitHub</span>
-              <span class="contact-value">github.com/sp3zzi</span>
-            </span>
-            <span class="contact-arrow">→</span>
-          </a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <p>Andrea Speziari — Portfolio </p>
-  </footer>
+  <!-- ===== TAB BAR MOBILE ===== -->
+  <nav class="mobile-tabbar" aria-label="Sezioni portfolio (mobile)">
+    <button class="mobile-tab-btn active" type="button" data-tab="about">
+      <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.4" stroke="currentColor" stroke-width="1.6"/><path d="M5 20c1.4-3.6 4.2-5.4 7-5.4S17.6 16.4 19 20" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <span>Chi sono</span>
+    </button>
+    <button class="mobile-tab-btn" type="button" data-tab="percorso">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M4 19V5a1 1 0 0 1 1-1h9l6 6v9a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8 12h8M8 16h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <span>Percorso</span>
+    </button>
+    <button class="mobile-tab-btn" type="button" data-tab="progetti">
+      <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="8" height="8" rx="1.4" stroke="currentColor" stroke-width="1.6"/><rect x="13" y="3" width="8" height="8" rx="1.4" stroke="currentColor" stroke-width="1.6"/><rect x="3" y="13" width="8" height="8" rx="1.4" stroke="currentColor" stroke-width="1.6"/><rect x="13" y="13" width="8" height="8" rx="1.4" stroke="currentColor" stroke-width="1.6"/></svg>
+      <span>Progetti</span>
+    </button>
+    <button class="mobile-tab-btn" type="button" data-tab="contatti">
+      <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="m3.5 6 8.5 6.5L20.5 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Contatti</span>
+    </button>
+  </nav>
 
   <script src="assets/js/main.js"></script>
 </body>
