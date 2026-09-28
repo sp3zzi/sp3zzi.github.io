@@ -32,7 +32,6 @@
         </div>
 
         <h1 class="sidebar-name">Andrea Speziari</h1>
-        <p class="sidebar-role">Studente Ingegneria Informatica</p>
 
         <span class="status-badge">
           <span class="status-dot"></span>
@@ -45,10 +44,12 @@
           <span class="sc-label">Email</span>
           <a href="mailto:spezioandre@gmail.com" class="sc-value">spezioandre@gmail.com</a>
         </li>
+        <!-- TODO: quando crei l'account LinkedIn, decommenta e inserisci il tuo link
         <li>
-          <span class="sc-label">Telefono</span>
-          <a href="tel:+393519211676" class="sc-value">+39 351 9211676</a>
+          <span class="sc-label">LinkedIn</span>
+          <a href="https://www.linkedin.com/in/TUO-PROFILO" target="_blank" rel="noopener noreferrer" class="sc-value">linkedin.com/in/TUO-PROFILO</a>
         </li>
+        -->
         <li>
           <span class="sc-label">GitHub</span>
           <a href="https://github.com/sp3zzi" target="_blank" rel="noopener noreferrer" class="sc-value">github.com/sp3zzi</a>
@@ -97,56 +98,10 @@
               </p>
             </div>
 
-            <div class="about-hero-visual reveal reveal-d1" aria-hidden="true">
-              <div class="laptop-scene">
-                <div class="laptop">
-                  <div class="laptop-screen">
-                    <div class="laptop-screen-inner">
-                      <div class="screen-topbar">
-                        <span class="dot dot-r"></span>
-                        <span class="dot dot-y"></span>
-                        <span class="dot dot-g"></span>
-                      </div>
-                      <div class="screen-code">
-                        <div class="fake-code">
-                          <div class="code-line">
-                            <span class="c-kw">const</span>
-                            <span class="c-fn">Andrea</span>
-                            <span class="c-punc">= {</span>
-                          </div>
-                          <div class="code-line indent desktop-only">
-                            <span class="c-prop">Ruolo</span><span class="c-punc">:</span>
-                            <span class="c-str">"Studente Ing. Informatica"</span><span class="c-punc">,</span>
-                          </div>
-                          <div class="code-line indent desktop-only">
-                            <span class="c-prop">Obiettivo</span><span class="c-punc">:</span>
-                            <span class="c-str">"Crescere"</span><span class="c-punc">,</span>
-                          </div>
-                          <div class="code-line indent desktop-only">
-                            <span class="c-prop">Status</span><span class="c-punc">:</span>
-                            <span class="c-str">"Aperto a opportunità"</span><span class="c-punc">,</span>
-                          </div>
-                          <div class="code-line indent mobile-only">
-                            <span class="c-prop">Ruolo</span><span class="c-punc">:</span>
-                            <span class="c-str">"Studente Ing. Informatica"</span><span class="c-punc">,</span>
-                          </div>
-                          <div class="code-line indent mobile-only">
-                            <span class="c-prop">Obiettivo</span><span class="c-punc">:</span>
-                            <span class="c-str">"Crescere"</span><span class="c-punc">,</span>
-                          </div>
-                          <div class="code-line indent mobile-only">
-                            <span class="c-prop">Status</span><span class="c-punc">:</span>
-                            <span class="c-str">"Aperto a opportunità"</span><span class="c-punc">,</span>
-                          </div>
-                          <div class="code-line">
-                            <span class="c-punc">};</span>
-                            <span class="c-cursor">|</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+            <div class="about-hero-visual reveal reveal-d1">
+              <div class="journey">
+                <canvas id="journey-canvas" role="img" aria-label="Animazione interattiva: un percorso tra le mie competenze, da HTML/CSS a JavaScript, Python, Flask, API e intelligenza artificiale"></canvas>
+                <p class="journey-caption" id="journey-caption"></p>
               </div>
             </div>
           </div>
@@ -272,6 +227,7 @@
                   <span class="skill-tag">HTML</span>
                   <span class="skill-tag">CSS</span>
                   <span class="skill-tag">Java</span>
+                  <span class="skill-tag">Python</span>
                   <span class="skill-tag">Git</span>
                   <span class="skill-tag">GitHub</span>
                   <span class="skill-tag">VS Code</span>
@@ -281,7 +237,6 @@
                 <p class="skills-col-label">In apprendimento</p>
                 <div class="skills-tags">
                   <span class="skill-tag learning">JavaScript</span>
-                  <span class="skill-tag learning">Python</span>
                   <span class="skill-tag learning">SQL</span>
                   <span class="skill-tag learning">AI applicata</span>
                   <span class="skill-tag learning">API integration</span>
@@ -289,6 +244,30 @@
                 </div>
               </div>
             </div>
+          </div>
+
+          <div class="cert-wrapper reveal reveal-d2">
+            <h3 class="block-title">Certificazioni</h3>
+            <article class="cert-card">
+              <div class="cert-head">
+                <div>
+                  <p class="cert-issuer">Udemy &middot; Alessandro Bemporad &middot; 27 settembre 2026 &middot; 20 ore</p>
+                  <h4>Python Pro 2026: La Guida Completa, da Zero a Professionista</h4>
+                </div>
+                <span class="cert-status">Completato</span>
+              </div>
+              <p class="cert-text">
+                Corso completo su Python: programmazione a oggetti, strutture dati, gestione dei file, virtual environment e database MongoDB.
+                Nella parte finale ho lavorato sull'integrazione delle API di intelligenza artificiale (OpenAI/ChatGPT) all'interno dei programmi.
+              </p>
+              <div class="project-tags">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">OOP</span>
+                <span class="skill-tag">MongoDB</span>
+                <span class="skill-tag">API OpenAI</span>
+              </div>
+              <a href="https://www.udemy.com/certificate/UC-b74bcde4-ae3c-4f52-b160-19e3155f8a5b/" target="_blank" rel="noopener noreferrer" class="education-link">Vedi l'attestato</a>
+            </article>
           </div>
         </section>
 
@@ -335,16 +314,7 @@
               </button>
 
               <div class="preview-dropdown">
-                <div class="preview-grid">
-                  <figure class="preview-item">
-                    <img src="assets/images/azienda-finder-1.png" alt="Schermata home di Azienda Finder" loading="lazy" />
-                    <figcaption>Home e ricerca aziende</figcaption>
-                  </figure>
-                  <figure class="preview-item">
-                    <img src="assets/images/azienda-finder-2.png" alt="Schermata archivio di Azienda Finder" loading="lazy" />
-                    <figcaption>Archivio comuni e dati raccolti</figcaption>
-                  </figure>
-                </div>
+                <p class="preview-empty">In aggiornamento: nuova anteprima in arrivo a breve.</p>
               </div>
             </article>
 
@@ -359,7 +329,7 @@
                   <p class="project-type">Siti web</p>
                   <h3>Siti per attività locali</h3>
                 </div>
-                <span class="project-status live">Live</span>
+                <span class="project-status">In aggiornamento</span>
               </div>
 
               <p class="project-text">
@@ -383,12 +353,7 @@
               </button>
 
               <div class="preview-dropdown">
-                <div class="preview-links">
-                  <a href="https://previw-estetisti.netlify.app/" target="_blank" rel="noopener noreferrer">Centro Estetico</a>
-                  <a href="https://preview-parrucchieri.netlify.app/" target="_blank" rel="noopener noreferrer">Parrucchieri</a>
-                  <a href="https://preview-tatuatori.netlify.app/" target="_blank" rel="noopener noreferrer">Tatuatori</a>
-                  <a href="https://preview-ristoranti.netlify.app/" target="_blank" rel="noopener noreferrer">Ristoranti</a>
-                </div>
+                <p class="preview-empty">In aggiornamento: nuove anteprime in arrivo a breve.</p>
               </div>
             </article>
           </div>
